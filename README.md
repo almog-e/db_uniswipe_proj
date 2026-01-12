@@ -1,16 +1,56 @@
-# React + Vite
+# My React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-stack app with React frontend and Node/Express backend.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You'll need Node.js and MySQL installed.
 
-## React Compiler
+### Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Client:**
+```bash
+npm install
+npm run dev
+```
+Runs on http://localhost:5173
 
-## Expanding the ESLint configuration
+**Server:**
+```bash
+cd server
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a `.env` file in the server directory:
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=myreactapp
+```
+
+Then run:
+```bash
+npm run init-db  # first time only
+npm run dev
+```
+
+### Running everything
+
+Just open two terminals and run `npm run dev` in each (remember to `cd server` for the backend).
+
+## Commands
+
+**Client:**
+- `npm run dev` - dev server
+- `npm run build` - production build
+- `npm run lint` - run linter
+
+**Server:**
+- `npm run dev` - dev mode with auto-restart
+- `npm start` - production
+- `npm run init-db` - set up database
+
+## Stack
+
+React + Vite / Node + Express / MySQL

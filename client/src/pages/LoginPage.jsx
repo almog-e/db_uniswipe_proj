@@ -75,7 +75,6 @@ function LoginPage() {
           </button>
         </p>
 
-        {/* Optional: show fake credentials */}
         <div style={{ marginTop: 16, fontSize: 13, opacity: 0.8 }}>
           <div>Fake User: user@test.com / 123456</div>
           <div>Fake Admin: admin@test.com / admin123</div>

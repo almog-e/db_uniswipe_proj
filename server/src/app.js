@@ -14,13 +14,11 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// request logging
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
     next();
 });
 
-// Mount institutions router at /api/institutions
 app.use('/api/institutions', universitiesRouter);
 
 app.use('/api/states', stateRouter);
@@ -28,8 +26,6 @@ app.use('/api/account_check', accountCheckRouter);
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 
-
-// error handler (should be last)
 import errorHandler from './middleware/errorHandler.js';
 app.use(errorHandler);
 

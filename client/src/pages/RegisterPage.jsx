@@ -25,7 +25,7 @@ function RegisterPage() {
         }
 
         if (password.length < 6) {
-            setError("Password should be at least 6 characters long.");
+            setError("Password should be at least 6 characters.");
             return;
         }
 
@@ -35,7 +35,7 @@ function RegisterPage() {
         }
 
         await register({ fullName, email, password });
-        setSuccess("Account created successfully! (Simulation only for now)");
+        setSuccess("Account created! (Simulation only for now)");
 
         setTimeout(() => navigate("/login"), 600);
     };

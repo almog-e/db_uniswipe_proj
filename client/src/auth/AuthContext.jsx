@@ -8,31 +8,28 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("auth_user");
     return saved ? JSON.parse(saved) : null;
-  }); // { email, role, fullName, token }
+  });
 
   const login = async ({ email, password }) => {
     const found = FAKE_USERS.find(
       (u) => u.email === email && u.password === password
     );
 
-    if (!found) {
-      throw new Error("Invalid email or password");
-    }
+    if (!found) throw new Error("Invalid email or password");
 
-    const fakeUser = {
+    const userData = {
       email: found.email,
       role: found.role,
       fullName: found.fullName,
       token: "fake-jwt-token",
     };
 
-    setUser(fakeUser);
-    localStorage.setItem("auth_user", JSON.stringify(fakeUser));
-    return fakeUser;
+    setUser(userData);
+    localStorage.setItem("auth_user", JSON.stringify(userData));
+    return userData;
   };
 
   const register = async ({ fullName, email, password }) => {
-    // Simulation: add to fake users so registration can be tested locally
     FAKE_USERS.push({ email, password, role: "user", fullName });
     return { ok: true };
   };

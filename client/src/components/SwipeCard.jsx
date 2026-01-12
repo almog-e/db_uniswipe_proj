@@ -7,7 +7,7 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
     const [pos, setPos] = useState({ x: 0, y: 0 });
     const [rot, setRot] = useState(0);
 
-    const threshold = 120; // px needed to trigger swipe
+    const threshold = 120;
 
     const likeOpacity = useMemo(() => clamp((pos.x - 40) / 120, 0, 1), [pos.x]);
     const nopeOpacity = useMemo(() => clamp((-pos.x - 40) / 120, 0, 1), [pos.x]);
@@ -25,7 +25,7 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
         const dy = e.clientY - startRef.current.y;
 
         setPos({ x: dx, y: dy });
-        setRot(dx * 0.06); // rotate a bit as you drag
+        setRot(dx * 0.06);
     }
 
     function onPointerUp() {
@@ -41,13 +41,11 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
             return;
         }
 
-        // snap back
         setPos({ x: 0, y: 0 });
         setRot(0);
     }
 
     function animateOut(x, y, cb) {
-        // quick and dirty: set a transition by inline style flag
         setIsAnimating(true);
         setPos({ x, y });
         setRot(x * 0.04);
@@ -99,7 +97,6 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
                 draggable={false}
             />
 
-            {/* gradient overlay */}
             <div
                 style={{
                     position: "absolute",
@@ -109,7 +106,6 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
                 }}
             />
 
-            {/* LIKE / NOPE badges */}
             <div
                 style={{
                     position: "absolute",
@@ -148,7 +144,6 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
                 MATCH
             </div>
 
-            {/* bottom content */}
             <div style={{ position: "absolute", left: 16, right: 16, bottom: 16 }}>
                 <div style={{ color: "white", fontSize: 22, fontWeight: 800 }}>
                     {item.name}

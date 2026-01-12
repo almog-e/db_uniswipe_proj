@@ -5,7 +5,6 @@ export default function AppNavbar() {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
 
-    // Show nothing if not logged in
     if (!user) return null;
 
     const onLogout = () => {

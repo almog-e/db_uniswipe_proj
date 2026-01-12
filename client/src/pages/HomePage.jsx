@@ -8,7 +8,6 @@ import AppNavbar from "../components/AppNavbar";
 export default function HomePage() {
     const navigate = useNavigate();
 
-    // stack index: top card is the last shown
     const [index, setIndex] = useState(0);
     const [stack, setStack] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -148,7 +147,6 @@ export default function HomePage() {
                         </div>
                     ) : (
                         <>
-                            {/* "next" card behind */}
                             {stack[index + 1] && (
                                 <div
                                     style={{
@@ -162,7 +160,6 @@ export default function HomePage() {
                                 />
                             )}
 
-                            {/* top card */}
                             <SwipeCard
                                 item={current}
                                 onSwipeLeft={onSwipeLeft}
