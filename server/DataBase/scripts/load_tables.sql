@@ -20,7 +20,10 @@ SELECT UNITID, INSTNM, STABBR, CITY, ZIP,
         WHEN 2 THEN 'Private Nonprofit'
         WHEN 3 THEN 'Private For-Profit'
         ELSE 'Unknown'
-    END, ADM_RATE, INSTURL, NULL
+    END,     
+    NULLIF(ADM_RATE, 0),
+    INSTURL,
+    NULL
 FROM institutions_main
 WHERE CURROPER = 1 -- only currently operating institution
   AND STABBR IN (SELECT state_code FROM states);
