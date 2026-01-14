@@ -1,0 +1,201 @@
+id,name,email,gender,address,state,latitude,longitude,GPA,SAT,ACT,min_ROI,high_school_major,preferred_degree_type,preferred_field_category
+1,Morissa Leates,mleates0@admin.ch,F,5048 Old Shore Court,CA,37.7509,-122.4153,0.79,893,35,58.08,Sciences,Bachelor's Degree,psychology
+2,Marmaduke Halsted,mhalsted1@diigo.com,F,8251 Clarendon Circle,SC,34.8882,-81.969,3.29,1182,35,60.11,Sciences,Graduate/Professional Certificate,psychology
+3,Glenn Cainey,gcainey2@free.fr,F,4 Chive Center,FL,27.8918,-82.7248,0.8,487,10,4.05,History,Bachelor's Degree,health
+4,Gusta Ricardou,gricardou3@icq.com,M,9739 8th Parkway,NC,35.6004,-82.4918,3.96,862,36,64.95,None,Associate's Degree,engineering
+5,Marlow Shingler,mshingler4@squarespace.com,F,34 Old Shore Street,MA,42.0999,-72.5783,1.22,977,8,14.6,History,First Professional Degree,mathematics
+6,Vannie Cush,vcush5@dedecms.com,F,644 Blaine Parkway,FL,25.9441,-80.2144,3.56,464,11,3.1,Computer Science,Graduate/Professional Certificate,technology
+7,Correna Shervington,cshervington6@hp.com,F,73718 Melvin Way,PA,41.4019,-75.6376,3.57,733,22,97.14,None,Post-baccalaureate Certificate,computer
+8,Dena Lloyds,dlloyds7@telegraph.co.uk,F,08540 Clyde Gallagher Park,DC,38.8933,-77.0146,3.72,891,5,68.37,Arts,Associate's Degree,communication
+9,Zitella Ciccottini,zciccottini8@ovh.net,M,0 Green Ridge Pass,VT,44.2595,-72.585,0.25,920,32,81.57,History,Undergraduate Certificate or Diploma,education
+10,Binny Plaister,bplaister9@weibo.com,M,85648 Fisk Hill,PA,40.0018,-75.1179,3.95,466,10,90.95,Business,Associate's Degree,education
+11,Shaine Bowland,sbowlanda@paypal.com,M,4875 Forster Hill,TX,33.1428,-97.0727,1.42,1275,23,88.55,Arts,Graduate/Professional Certificate,mathematics
+12,Kaspar Bertwistle,kbertwistleb@behance.net,M,132 Arapahoe Park,TN,35.9244,-84.0015,1.6,876,4,12.62,Arts,Doctoral Degree,social
+13,Sawyer Seargeant,sseargeantc@toplist.cz,F,4682 Barby Point,CA,33.9187,-117.8892,3.05,602,27,55.33,Business,Master's Degree,technology
+14,Pammy Lowden,plowdend@ucsd.edu,F,062 Coleman Circle,AL,32.3834,-86.2434,1.95,1410,25,89.6,Sciences,Doctoral Degree,law
+15,Cherish Gauld,cgaulde@noaa.gov,F,370 Loftsgordon Park,TX,33.9995,-98.3938,3.31,1540,27,59.72,Business,Undergraduate Certificate or Diploma,education
+16,Dinnie Jouannin,djouanninf@google.cn,M,68585 Vahlen Avenue,OH,41.028,-81.4632,1.34,1219,27,74.75,Sciences,Doctoral Degree,design
+17,Laurent Krimmer,lkrimmerg@storify.com,M,963 Mandrake Center,GA,33.8913,-84.0746,2.41,549,4,14.25,Arts,Master's Degree,health
+18,Bancroft Curds,bcurdsh@vk.com,F,340 Golf Alley,TX,29.4413,-98.4793,1.87,1223,28,49.91,None,First Professional Degree,environment
+19,Jedediah Rendell,jrendelli@parallels.com,F,9335 Towne Circle,IA,41.6727,-93.5722,0.45,1436,2,64.94,None,Bachelor's Degree,design
+20,Julie Mounce,jmouncej@spotify.com,M,878 Tony Court,NV,39.5387,-119.8225,1.14,1418,8,13.21,History,Post-baccalaureate Certificate,environment
+21,Ibbie Endersby,iendersbyk@amazon.co.uk,F,4 Pankratz Circle,FL,30.4478,-84.3211,1.57,898,17,17.1,Arts,Post-baccalaureate Certificate,science
+22,Shurlocke Thirtle,sthirtlel@netvibes.com,F,8936 Oxford Avenue,NC,35.26,-80.8042,0.39,1594,36,42.46,Computer Science,First Professional Degree,mathematics
+23,Iseabal Kik,ikikm@bandcamp.com,F,316 Helena Crossing,TX,31.6948,-106.3,3.2,1101,8,34.8,History,First Professional Degree,computer
+24,Holly Skevington,hskevingtonn@java.com,M,4 Boyd Center,NM,35.0448,-106.6893,3.69,846,32,55.73,Sciences,Bachelor's Degree,design
+25,Evanne Kernermann,ekernermanno@hc360.com,M,39 Lakewood Gardens Crossing,AZ,33.3363,-111.9197,2.74,1405,1,97.92,Arts,Doctoral Degree,business
+26,Ephrayim Bellenger,ebellengerp@nasa.gov,M,2892 Norway Maple Circle,IN,39.7795,-86.1328,3.05,1153,1,30.69,None,Master's Degree,computer
+27,Ketti Folli,kfolliq@wikispaces.com,M,27 Warbler Alley,DE,39.5645,-75.597,0.18,1196,34,57.29,None,First Professional Degree,mathematics
+28,Vernor Udell,vudellr@berkeley.edu,F,74675 Mendota Circle,TN,35.1255,-90.0424,3.11,1222,17,59.62,Computer Science,Doctoral Degree,science
+29,Immanuel Bourgour,ibourgours@yahoo.co.jp,F,269 Memorial Drive,VA,36.9312,-76.2397,0.77,517,29,56.98,Sciences,Associate's Degree,mathematics
+30,Ardene Lyptrit,alyptritt@paypal.com,F,9 Hoard Avenue,IN,39.7851,-86.1595,1.13,1489,27,88.31,History,Post-baccalaureate Certificate,business
+31,Austin Magovern,amagovernu@whitehouse.gov,F,6449 Columbus Lane,NJ,40.2418,-74.6962,0.09,816,11,77.15,Computer Science,Graduate/Professional Certificate,law
+32,Alix Ridhole,aridholev@vistaprint.com,F,2355 Anderson Junction,UT,40.7713,-111.9309,2.64,568,14,38.43,Arts,Bachelor's Degree,management
+33,Bronson Arnao,barnaow@hexun.com,F,6567 Norway Maple Avenue,IN,38.1071,-87.5256,3.08,442,1,8.85,Business,Doctoral Degree,health
+34,Filip Tuffs,ftuffsx@eepurl.com,F,6 Lindbergh Hill,AZ,33.3616,-111.2795,2.14,689,3,77.16,None,Master's Degree,social
+35,Jorey Bremeyer,jbremeyery@fda.gov,F,26754 Bay Lane,NY,40.7808,-73.9772,0.0,873,29,26.92,None,Associate's Degree,arts
+36,Thomas Henrot,thenrotz@mashable.com,F,2 Vahlen Court,FL,27.872,-82.4388,1.17,1235,11,76.33,Business,First Professional Degree,science
+37,Maressa Millhill,mmillhill10@cafepress.com,F,2 Beilfuss Court,UT,40.5927,-111.831,2.51,1154,10,32.13,Arts,Master's Degree,science
+38,Shantee Turone,sturone11@mapy.cz,F,96131 Paget Street,NY,40.8265,-73.9383,3.45,566,18,97.36,Business,First Professional Degree,business
+39,Gusella Dubock,gdubock12@mediafire.com,M,510 Pierstorff Circle,NC,36.0807,-80.0244,0.68,1534,16,65.7,Sciences,Undergraduate Certificate or Diploma,environment
+40,Blaire Fryers,bfryers13@unblog.fr,M,519 Pleasure Street,NC,35.26,-80.8042,1.37,698,21,95.69,History,Master's Degree,engineering
+41,Millisent Terbrug,mterbrug14@eepurl.com,F,81 Truax Parkway,CA,36.7563,-121.6703,3.91,790,30,6.22,Business,Doctoral Degree,media
+42,Joella MacEvilly,jmacevilly15@epa.gov,M,55 Shelley Lane,KS,39.1271,-95.6384,3.44,490,14,54.7,Arts,Master's Degree,communication
+43,Jerald Hatchman,jhatchman16@networkadvertising.org,M,52 Erie Terrace,WI,43.1154,-88.0346,0.92,416,27,37.88,Business,First Professional Degree,business
+44,Fayette De Beauchamp,fde17@networksolutions.com,F,60 Anhalt Center,AL,30.6589,-88.178,1.36,1134,12,38.34,None,Associate's Degree,psychology
+45,Federica Truder,ftruder18@cam.ac.uk,M,37 Morrow Circle,NC,35.7908,-78.653,0.02,589,31,70.5,Arts,Post-baccalaureate Certificate,technology
+46,Hebert Rafe,hrafe19@utexas.edu,M,9361 Eastlawn Road,VA,38.7351,-77.0796,3.54,992,19,46.37,Sciences,Associate's Degree,social
+47,Ingmar O'Grada,iograda1a@vinaora.com,F,50 Cambridge Crossing,IL,39.7495,-89.606,2.36,1129,17,91.65,Arts,Associate's Degree,health
+48,Lorine Halladey,lhalladey1b@google.es,M,81 Reinke Junction,TX,29.834,-95.4342,2.08,884,29,93.22,Arts,Bachelor's Degree,arts
+49,Gustav Fierman,gfierman1c@icio.us,M,21922 Farragut Alley,CA,37.7848,-122.7278,1.02,950,29,19.96,Arts,Bachelor's Degree,computer
+50,Eal Elmes,eelmes1d@un.org,F,01 Erie Avenue,NJ,40.251,-74.7627,0.8,765,32,78.11,History,Master's Degree,nursing
+51,Alix Giacopazzi,agiacopazzi1e@skyrock.com,M,3 Stuart Street,GA,33.8932,-84.2539,3.86,913,36,87.44,Sciences,Undergraduate Certificate or Diploma,mathematics
+52,Saudra Barrell,sbarrell1f@last.fm,M,485 Utah Point,TX,31.7705,-106.5048,0.47,971,1,14.44,None,Master's Degree,social
+53,Ezechiel Foad,efoad1g@dailymotion.com,M,74642 Dixon Drive,WY,41.1084,-104.8107,1.16,773,5,23.29,Sciences,Associate's Degree,engineering
+54,Sheff Stirley,sstirley1h@canalblog.com,M,94 Shelley Hill,PA,39.9379,-75.1794,2.56,912,19,37.49,Business,Master's Degree,agriculture
+55,Denney Schiefersten,dschiefersten1i@symantec.com,M,39080 Raven Terrace,NC,35.26,-80.8042,1.42,1271,25,66.51,Arts,Master's Degree,science
+56,Eberto Godfery,egodfery1j@storify.com,F,47043 Hallows Hill,IN,37.9971,-87.575,2.56,765,5,84.53,Computer Science,Associate's Degree,health
+57,Ladonna Husselbee,lhusselbee1k@paginegialle.it,M,62 Lillian Point,CA,37.6802,-121.9215,0.99,668,24,35.91,Computer Science,Bachelor's Degree,education
+58,Noelyn Girardez,ngirardez1l@linkedin.com,M,631 3rd Avenue,KY,38.0283,-84.4715,1.8,662,27,90.17,History,Undergraduate Certificate or Diploma,arts
+59,Sampson Klink,sklink1m@a8.net,F,5566 Maple Trail,TX,35.4015,-101.8951,1.19,1060,3,3.28,Arts,Associate's Degree,mathematics
+60,Marlo Lafee,mlafee1n@4shared.com,M,647 Chive Lane,CA,33.7866,-118.2987,1.65,829,13,56.65,Sciences,Bachelor's Degree,law
+61,Ware Wastie,wwastie1o@geocities.jp,F,823 Emmet Parkway,CA,37.7848,-122.7278,1.86,914,33,68.97,Arts,Post-baccalaureate Certificate,health
+62,Hal Breakey,hbreakey1p@wikispaces.com,M,48925 Waubesa Park,IN,41.6255,-86.2433,1.5,664,17,37.84,Computer Science,Bachelor's Degree,environment
+63,Graeme Strain,gstrain1q@e-recht24.de,F,37919 Killdeer Place,DE,39.5645,-75.597,3.45,673,15,6.99,Computer Science,Associate's Degree,communication
+64,Ludvig Goodfield,lgoodfield1r@newyorker.com,M,583 Truax Lane,VA,38.8158,-77.09,1.21,566,22,88.34,Sciences,First Professional Degree,science
+65,Waiter Streatfield,wstreatfield1s@histats.com,F,1003 Redwing Crossing,CA,36.7991,-119.8016,1.35,510,34,33.53,Sciences,Undergraduate Certificate or Diploma,mathematics
+66,Royal Bockman,rbockman1t@skype.com,F,48 Steensland Way,CA,38.3774,-121.4444,1.36,673,8,68.16,Arts,Doctoral Degree,management
+67,Julienne Frango,jfrango1u@wikipedia.org,F,8532 Springview Way,TX,29.834,-95.4342,1.23,1315,31,25.43,None,Undergraduate Certificate or Diploma,agriculture
+68,Waylin Hands,whands1v@eventbrite.com,F,0153 Muir Way,FL,26.4116,-80.0928,0.04,603,4,19.49,Arts,Associate's Degree,science
+69,Hurley Filipov,hfilipov1w@census.gov,M,78417 Gale Plaza,PA,40.3522,-78.9383,0.22,1362,29,18.32,History,Master's Degree,law
+70,Maryellen Kiehl,mkiehl1x@newyorker.com,M,9802 Nova Street,AR,34.6725,-92.3529,1.54,952,22,69.77,History,First Professional Degree,agriculture
+71,Sofia Pell,spell1y@yahoo.co.jp,M,8432 Onsgard Street,MA,42.3528,-71.1875,1.49,1579,34,21.32,None,Post-baccalaureate Certificate,law
+72,Maribeth Chorlton,mchorlton1z@angelfire.com,F,6 Stephen Crossing,AR,34.7519,-92.3925,1.95,947,11,16.39,Sciences,Master's Degree,nursing
+73,Saul Hambelton,shambelton20@tinyurl.com,M,91546 Warrior Place,SC,33.7377,-78.9787,1.15,480,20,12.01,History,Undergraduate Certificate or Diploma,communication
+74,Peggi Baynon,pbaynon21@psu.edu,M,5 Laurel Terrace,PA,40.0418,-76.3012,3.23,1124,17,75.05,Computer Science,Doctoral Degree,social
+75,Humphrey Hevner,hhevner22@fastcompany.com,M,5 North Junction,NY,40.6451,-73.945,2.55,1354,1,63.99,None,Associate's Degree,communication
+76,Crosby Mowat,cmowat23@china.com.cn,F,1274 Fulton Alley,TX,30.0211,-94.1157,1.78,991,14,6.27,Arts,Associate's Degree,media
+77,Ram Hopewell,rhopewell24@instagram.com,F,518 Wayridge Crossing,MD,38.9513,-76.8958,0.97,1092,14,19.99,Sciences,Undergraduate Certificate or Diploma,social
+78,Jard Nicely,jnicely25@blog.com,M,19 Gateway Parkway,FL,26.6492,-81.6167,3.86,900,13,41.99,Computer Science,Doctoral Degree,communication
+79,Edouard Neesham,eneesham26@unc.edu,F,41 Sundown Parkway,CA,34.4329,-119.8371,0.56,922,19,36.45,None,Bachelor's Degree,nursing
+80,Lance Spondley,lspondley27@indiatimes.com,F,45 Pond Hill,LA,30.0071,-90.1094,0.37,1248,25,12.43,Computer Science,Undergraduate Certificate or Diploma,agriculture
+81,Danny Belloch,dbelloch28@ihg.com,F,1586 Morrow Parkway,AZ,33.5623,-112.0559,3.5,701,6,91.33,Sciences,Doctoral Degree,business
+82,Obadias Legonidec,olegonidec29@nytimes.com,F,9 Redwing Junction,CA,33.7866,-118.2987,1.23,1297,12,91.77,Business,Master's Degree,computer
+83,Wynn Kidstone,wkidstone2a@zimbio.com,F,9359 Thackeray Lane,GA,33.7488,-84.3883,0.18,1223,14,99.18,Computer Science,Doctoral Degree,arts
+84,Waylon Turnbull,wturnbull2b@msu.edu,M,3078 Longview Point,TN,35.9244,-84.0015,1.59,1327,18,77.21,History,Bachelor's Degree,environment
+85,Conchita Pottell,cpottell2c@ted.com,F,06320 Forest Dale Trail,AK,61.1535,-149.8289,1.37,1244,31,57.61,Business,Bachelor's Degree,business
+86,Emyle Hickeringill,ehickeringill2d@stumbleupon.com,F,765 Meadow Valley Hill,GA,32.8067,-83.6913,0.91,1136,31,59.06,Sciences,Doctoral Degree,science
+87,Melly Hassett,mhassett2e@weather.com,M,7 Talmadge Junction,CA,38.6157,-121.5053,0.03,782,24,77.32,None,First Professional Degree,psychology
+88,Vernice Riolfi,vriolfi2f@free.fr,F,1 Northfield Terrace,FL,27.8918,-82.7248,0.92,658,11,45.16,History,Bachelor's Degree,law
+89,Giffy Jirasek,gjirasek2g@wisc.edu,F,87 Elgar Lane,DC,38.8952,-77.0365,1.02,744,15,13.99,Computer Science,Post-baccalaureate Certificate,agriculture
+90,Blanch Edwin,bedwin2h@redcross.org,F,52176 Stone Corner Parkway,OK,35.6665,-97.4798,2.93,632,1,50.91,Computer Science,Master's Degree,management
+91,Ciel Oldham,coldham2i@techcrunch.com,F,130 3rd Drive,CA,38.068,-122.741,2.52,1302,18,30.47,History,Master's Degree,communication
+92,Barnett Fesby,bfesby2j@adobe.com,F,04545 Shoshone Court,CO,39.5437,-104.9691,2.67,1301,4,29.8,Sciences,Doctoral Degree,arts
+93,Cullan Cometti,ccometti2k@qq.com,M,46 Kenwood Plaza,NV,35.9279,-114.9721,1.75,610,34,85.53,Computer Science,Master's Degree,nursing
+94,Loren Glover,lglover2l@123-reg.co.uk,F,5 Northwestern Plaza,KY,38.189,-85.6768,2.1,963,6,10.83,Business,Master's Degree,design
+95,Ruggiero Pirrey,rpirrey2m@ning.com,F,4741 Little Fleur Place,NY,40.8085,-73.9198,2.38,656,17,54.56,Business,Undergraduate Certificate or Diploma,mathematics
+96,Anneliese Chiverton,achiverton2n@technorati.com,F,3 Claremont Crossing,AL,32.373,-86.3081,1.91,870,33,14.15,History,Bachelor's Degree,science
+97,Elisha Teresa,eteresa2o@prnewswire.com,M,57748 Bartillon Center,IA,41.6727,-93.5722,3.77,512,16,16.49,Sciences,Post-baccalaureate Certificate,education
+98,Karna Polle,kpolle2p@japanpost.jp,F,3 Arrowood Street,AL,32.2334,-86.2085,2.48,1300,11,99.02,Business,Doctoral Degree,business
+99,Sheffy Elph,selph2q@google.fr,F,5 Kropf Street,TX,30.4455,-97.6595,3.03,881,18,67.0,Arts,Graduate/Professional Certificate,law
+100,Forster Follacaro,ffollacaro2r@4shared.com,M,79973 8th Crossing,FL,26.5529,-81.9486,0.85,834,35,41.05,Business,Graduate/Professional Certificate,media
+101,Micky De Ambrosis,mde2s@1688.com,M,37763 Moose Junction,PA,42.1827,-80.0649,2.59,1252,32,23.89,Business,Master's Degree,design
+102,Delmor Justham,djustham2t@delicious.com,M,6 Service Plaza,FL,30.0956,-81.6217,0.52,1035,27,30.93,Computer Science,Undergraduate Certificate or Diploma,law
+103,Northrup Ellse,nellse2u@hao123.com,F,87149 Morningstar Lane,CA,33.7866,-118.2987,2.35,1337,17,68.66,Business,Master's Degree,environment
+104,Heindrick Elesander,helesander2v@163.com,M,280 Magdeline Avenue,WA,46.6288,-120.574,3.01,1572,25,87.66,History,Graduate/Professional Certificate,engineering
+105,Juliette Ranscome,jranscome2w@amazon.co.uk,F,48708 Northview Avenue,FL,27.872,-82.4388,1.11,1539,1,47.1,History,Master's Degree,communication
+106,Maggee Eam,meam2x@eventbrite.com,F,10818 Browning Point,VA,37.5593,-77.4471,0.11,1073,8,81.57,Computer Science,Post-baccalaureate Certificate,management
+107,Harriett Thomasen,hthomasen2y@alibaba.com,M,70506 American Ash Park,FL,27.2427,-82.4751,1.51,1366,12,79.01,None,First Professional Degree,communication
+108,Ches Hoggan,choggan2z@statcounter.com,F,6349 Village Green Hill,OH,39.7155,-84.1637,1.95,1556,14,95.07,None,Master's Degree,psychology
+109,Philip Calcott,pcalcott30@cbslocal.com,F,160 Warrior Alley,OR,44.0185,-123.0998,2.88,489,31,62.96,Computer Science,Associate's Degree,business
+110,Rod Ingreda,ringreda31@hc360.com,F,7 Heffernan Drive,MO,39.035,-94.3567,3.9,1497,29,27.97,Arts,Bachelor's Degree,media
+111,Julienne Dimblebee,jdimblebee32@nsw.gov.au,F,8 Logan Alley,NC,35.2072,-80.9568,0.0,923,8,81.59,History,Bachelor's Degree,agriculture
+112,Aaron Busst,abusst33@cloudflare.com,F,3400 Sunbrook Circle,TX,31.8925,-106.5426,2.44,1308,17,71.34,History,Bachelor's Degree,technology
+113,Emmit Largan,elargan34@nbcnews.com,F,45 Magdeline Parkway,FL,30.3449,-81.6831,2.71,436,6,75.42,Arts,Master's Degree,business
+114,Prisca Mettetal,pmettetal35@patch.com,M,9 Surrey Street,MI,42.4981,-83.2058,3.61,1362,35,71.03,Computer Science,Master's Degree,business
+115,Mandie Brose,mbrose36@wufoo.com,M,0 Sommers Court,CT,41.0957,-73.4285,2.23,732,10,69.74,Arts,Associate's Degree,law
+116,Aharon Sherrington,asherrington37@hibu.com,F,74 Morningstar Trail,OH,41.1039,-80.6436,2.18,460,11,58.75,Sciences,First Professional Degree,arts
+117,Orion McGruar,omcgruar38@pcworld.com,M,61474 Brown Parkway,CA,35.3039,-119.1056,1.66,445,13,98.54,Arts,Graduate/Professional Certificate,environment
+118,Bobbie Eustace,beustace39@epa.gov,M,7810 Gulseth Parkway,TN,36.0986,-86.8219,0.15,568,16,42.39,Sciences,Master's Degree,law
+119,Alethea Gorry,agorry3a@ning.com,M,54237 Del Sol Parkway,DC,38.8933,-77.0146,2.5,1380,23,7.03,Arts,First Professional Degree,computer
+120,Riccardo Chiechio,rchiechio3b@about.me,M,986 Raven Avenue,VA,37.0318,-76.3199,3.59,797,36,27.85,Arts,Master's Degree,design
+121,Sutton Handscombe,shandscombe3c@com.com,M,83 Mifflin Avenue,VA,37.0156,-76.4332,3.07,1259,23,35.26,Arts,Graduate/Professional Certificate,technology
+122,Adriana Myerscough,amyerscough3d@oakley.com,M,3732 Kedzie Point,IN,39.7851,-86.1595,2.71,554,7,34.77,Arts,First Professional Degree,management
+123,Nicolea Canon,ncanon3e@icq.com,F,576 Knutson Terrace,MI,42.2166,-83.3532,3.96,1290,10,27.28,History,First Professional Degree,education
+124,Loutitia Baudoux,lbaudoux3f@noaa.gov,M,2612 Ludington Circle,TX,32.7714,-97.2915,0.12,497,5,98.31,Sciences,Doctoral Degree,education
+125,Storm Soitoux,ssoitoux3g@w3.org,M,27 2nd Alley,MO,39.1024,-94.5986,2.24,406,27,96.1,None,Associate's Degree,nursing
+126,Thor Slowly,tslowly3h@dmoz.org,F,9 Reinke Court,TX,30.2907,-97.7648,2.62,929,34,18.61,None,Undergraduate Certificate or Diploma,mathematics
+127,Tomlin Sangwine,tsangwine3i@about.com,F,0425 Oakridge Pass,MI,42.2399,-83.1508,1.69,1106,16,4.55,Arts,Post-baccalaureate Certificate,communication
+128,Jarrett Driffe,jdriffe3j@mac.com,F,51 Northland Crossing,VA,38.8318,-77.2888,1.25,924,17,34.53,Sciences,Undergraduate Certificate or Diploma,management
+129,Franzen Alfuso,falfuso3k@globo.com,F,4007 Cherokee Court,RI,41.8267,-71.3977,1.31,740,9,81.79,History,Doctoral Degree,health
+130,Doug Linck,dlinck3l@de.vu,F,189 Shoshone Lane,OH,39.2692,-84.3307,2.23,1175,15,12.07,Business,Graduate/Professional Certificate,arts
+131,Bendicty Senner,bsenner3m@who.int,M,7158 Blackbird Park,MO,38.8606,-94.4636,1.22,403,10,52.35,Business,Graduate/Professional Certificate,design
+132,Caryn Jerome,cjerome3n@storify.com,F,719 Stuart Pass,NY,40.8139,-73.8841,0.2,942,13,12.93,Computer Science,Bachelor's Degree,business
+133,Douglass Hearon,dhearon3o@cdc.gov,M,2094 School Road,NE,41.2955,-96.1008,3.97,649,26,36.0,Computer Science,Master's Degree,communication
+134,Thebault Elis,telis3p@usatoday.com,F,804 Old Shore Center,FL,30.3189,-81.6854,2.4,583,10,68.61,Arts,Bachelor's Degree,nursing
+135,Nerita Leipnik,nleipnik3q@mit.edu,F,6 Roxbury Circle,IN,39.7795,-86.1328,2.59,1488,7,69.51,Arts,Undergraduate Certificate or Diploma,business
+136,Noellyn Pendergast,npendergast3r@seesaa.net,F,69 Kipling Point,MN,45.0159,-93.4719,0.59,1301,13,32.35,Business,Undergraduate Certificate or Diploma,health
+137,Fairlie Donke,fdonke3s@wikia.com,F,508 Bobwhite Point,LA,30.033,-89.8826,0.73,629,17,26.19,Business,Graduate/Professional Certificate,arts
+138,Rosmunda Gritland,rgritland3t@answers.com,M,24 Elgar Alley,IL,39.7495,-89.606,2.22,1246,13,1.77,Computer Science,First Professional Degree,science
+139,Megan Giorgi,mgiorgi3u@parallels.com,M,75995 Vidon Crossing,ID,43.4599,-116.244,3.23,1330,22,79.27,History,Post-baccalaureate Certificate,computer
+140,Joshia Cardwell,jcardwell3v@dmoz.org,M,765 Autumn Leaf Circle,OK,35.4242,-97.6547,3.23,938,1,30.83,Business,Doctoral Degree,education
+141,Marcus Yurkevich,myurkevich3w@tinyurl.com,M,1 Messerschmidt Avenue,NM,35.0443,-106.6729,0.62,1235,32,88.31,Computer Science,Associate's Degree,design
+142,Thaxter Malham,tmalham3x@digg.com,F,603 Declaration Way,TX,30.3264,-97.7713,1.86,1414,28,92.25,Arts,Bachelor's Degree,business
+143,Lory Doggrell,ldoggrell3y@digg.com,M,16339 Sachtjen Center,RI,41.8267,-71.3977,3.91,1272,12,10.83,None,Undergraduate Certificate or Diploma,science
+144,Aldric Mayho,amayho3z@drupal.org,M,9 Pepper Wood Circle,NE,41.2933,-95.9361,1.91,1506,9,75.51,Computer Science,Master's Degree,science
+145,Kendall Hogben,khogben40@redcross.org,M,1840 Hoepker Center,GA,33.8932,-84.2539,2.77,603,21,88.27,History,Associate's Degree,design
+146,Jobina Faraker,jfaraker41@wp.com,M,26 Eagle Crest Pass,CA,36.7377,-119.7843,3.78,1037,11,24.99,Business,Bachelor's Degree,design
+147,Dodie Padrick,dpadrick42@weebly.com,F,2761 Di Loreto Avenue,FL,27.8546,-82.7545,2.9,726,8,4.57,None,Graduate/Professional Certificate,arts
+148,Zachariah Scarsbrooke,zscarsbrooke43@jugem.jp,M,17727 Algoma Avenue,MI,42.3749,-83.1087,0.02,1046,22,85.35,Sciences,First Professional Degree,social
+149,Elane Grinnell,egrinnell44@home.pl,M,9321 Helena Trail,CA,38.4386,-122.6727,1.06,509,16,60.15,None,First Professional Degree,law
+150,Thane Wehner,twehner45@ebay.com,F,1182 Fair Oaks Circle,UT,40.7713,-111.9309,0.06,1063,14,93.29,Business,Doctoral Degree,health
+151,Emilio Zack,ezack46@icio.us,F,04 Anhalt Place,CO,38.8247,-104.562,0.47,1277,22,70.98,Business,Associate's Degree,media
+152,Madella Perchard,mperchard47@freewebs.com,M,60381 Shopko Point,CO,39.7388,-104.4083,2.39,1047,35,55.06,Arts,Associate's Degree,media
+153,Eamon Ashwell,eashwell48@printfriendly.com,F,6925 Randy Alley,FL,26.0663,-80.3339,3.91,583,4,43.04,History,Graduate/Professional Certificate,education
+154,Heywood Foster-Smith,hfostersmith49@sina.com.cn,F,46 Cascade Parkway,MO,39.2829,-94.409,0.02,448,19,16.4,Arts,First Professional Degree,business
+155,Damon Skeldinge,dskeldinge4a@sciencedaily.com,F,69 Gerald Parkway,IN,39.849,-86.272,2.06,690,16,17.73,Computer Science,Bachelor's Degree,media
+156,Fanchette Collacombe,fcollacombe4b@about.com,F,09 Monument Drive,PA,39.9788,-75.1262,1.08,1519,24,0.2,History,Master's Degree,science
+157,Ina Larkcum,ilarkcum4c@jimdo.com,M,86788 Jenifer Pass,IA,41.9804,-91.7098,2.24,1374,17,62.07,History,Post-baccalaureate Certificate,arts
+158,Ricca Bambery,rbambery4d@sitemeter.com,F,71133 Tomscot Junction,FL,25.9441,-80.2144,2.99,499,18,95.94,None,Master's Degree,psychology
+159,Kamilah Barlee,kbarlee4e@mayoclinic.com,F,70003 Pearson Parkway,DC,38.8933,-77.0146,2.27,1406,12,97.95,Arts,Post-baccalaureate Certificate,mathematics
+160,Garwin Van't Hoff,gvant4f@hud.gov,M,8769 Bunting Plaza,IN,41.5878,-87.4062,2.94,970,26,73.73,Arts,Associate's Degree,nursing
+161,Elle Grantham,egrantham4g@abc.net.au,M,54290 New Castle Alley,CO,39.7388,-104.4083,1.12,1330,25,29.51,Arts,Associate's Degree,engineering
+162,Hernando Growcott,hgrowcott4h@vistaprint.com,M,87 Fisk Park,IN,41.1465,-85.1232,3.15,729,19,77.31,History,Post-baccalaureate Certificate,environment
+163,Traci Dome,tdome4i@cnbc.com,F,47475 Drewry Crossing,TN,36.032,-83.8021,1.03,1142,11,9.15,Business,Bachelor's Degree,health
+164,Katalin Marskell,kmarskell4j@usda.gov,M,06 Northport Trail,NM,35.0443,-106.6729,3.09,608,21,76.38,Business,Doctoral Degree,computer
+165,Jose Chesshire,jchesshire4k@cloudflare.com,F,3 Troy Terrace,VA,39.009,-77.4422,0.61,1013,3,36.93,None,Doctoral Degree,mathematics
+166,Milli Musto,mmusto4l@drupal.org,F,43502 Dawn Park,IN,39.7851,-86.1595,3.92,936,4,19.19,Sciences,Undergraduate Certificate or Diploma,agriculture
+167,Channa Lifsey,clifsey4m@state.tx.us,M,352 Schlimgen Center,CA,38.025,-121.2972,1.92,731,31,67.76,None,First Professional Degree,agriculture
+168,Kelley Strickett,kstrickett4n@indiegogo.com,F,0932 Waywood Lane,MO,38.6383,-90.4271,0.88,919,17,40.53,Arts,Doctoral Degree,computer
+169,Gussy Willeson,gwilleson4o@dmoz.org,M,0631 Green Ridge Drive,IL,41.8119,-87.6873,2.49,1270,7,94.26,History,Associate's Degree,computer
+170,Jasper McGonagle,jmcgonagle4p@edublogs.org,F,028 Porter Way,IN,41.0938,-85.0707,2.22,1458,26,46.1,None,Graduate/Professional Certificate,health
+171,Rachel Gotts,rgotts4q@disqus.com,M,73 Raven Plaza,GA,32.8118,-83.565,2.35,584,5,89.98,History,Associate's Degree,computer
+172,Toma Tebbitt,ttebbitt4r@indiegogo.com,F,7 Roxbury Point,DC,38.8933,-77.0146,0.48,1199,7,23.32,Arts,Undergraduate Certificate or Diploma,business
+173,Ben Pietersen,bpietersen4s@shareasale.com,F,8 Cherokee Lane,PA,40.2785,-76.8752,0.32,763,24,75.95,Sciences,Bachelor's Degree,science
+174,Jody Gracey,jgracey4t@wiley.com,M,1 Linden Center,TX,33.8581,-98.5755,0.18,1598,27,99.67,History,Bachelor's Degree,mathematics
+175,Adams Mathie,amathie4u@newsvine.com,F,69257 Badeau Court,NY,42.6568,-73.7605,0.72,700,2,24.51,Computer Science,Undergraduate Certificate or Diploma,business
+176,Miles Andreotti,mandreotti4v@wikispaces.com,F,07674 Mallard Parkway,TX,32.7673,-96.7776,2.89,1518,34,90.94,None,Post-baccalaureate Certificate,social
+177,Annissa Maleham,amaleham4w@sciencedaily.com,M,27 Charing Cross Terrace,LA,32.4908,-92.1594,1.24,1472,36,82.98,History,Master's Degree,nursing
+178,Nappy Asipenko,nasipenko4x@cnet.com,F,099 Truax Street,VA,37.5593,-77.4471,2.85,519,32,26.5,Sciences,Graduate/Professional Certificate,health
+179,Bamby Rein,brein4y@purevolume.com,M,988 Prentice Terrace,CA,33.7866,-118.2987,1.54,1544,17,36.27,History,Doctoral Degree,technology
+180,Fidel Kneal,fkneal4z@jigsy.com,M,26675 Shasta Alley,VA,36.7957,-76.0126,2.33,1491,29,24.02,Business,Associate's Degree,agriculture
+181,Patrice Batcheldor,pbatcheldor50@craigslist.org,M,89 Kedzie Center,AL,34.734,-86.5229,0.07,1465,34,77.53,None,Graduate/Professional Certificate,education
+182,Freda Cumberpatch,fcumberpatch51@engadget.com,F,5 Eliot Parkway,TX,31.7444,-106.2879,0.1,703,28,61.31,Computer Science,Doctoral Degree,environment
+183,Tripp Charkham,tcharkham52@scientificamerican.com,M,864 Vahlen Parkway,CA,34.0529,-118.2549,3.69,849,6,52.57,Sciences,Doctoral Degree,design
+184,Lorilyn Hooke,lhooke53@creativecommons.org,M,8 Myrtle Terrace,VA,36.8926,-76.5142,1.34,614,33,16.95,Arts,Doctoral Degree,nursing
+185,Layney Memmory,lmemmory54@posterous.com,F,44713 Oxford Point,CT,41.3089,-73.3637,0.04,1164,32,81.05,Business,Doctoral Degree,communication
+186,Salaidh Luto,sluto55@google.fr,M,4630 Jackson Point,TX,31.6948,-106.3,2.87,1467,1,30.91,Computer Science,First Professional Degree,computer
+187,Benny Zanolli,bzanolli56@twitpic.com,M,3 Judy Circle,MO,38.6531,-90.2435,3.28,1544,19,57.66,Arts,Graduate/Professional Certificate,law
+188,Ev Petters,epetters57@epa.gov,M,84855 Lien Road,DC,38.8959,-77.0211,2.67,436,35,93.88,Sciences,Graduate/Professional Certificate,health
+189,Bartel Hills,bhills58@blogs.com,F,073 Ludington Drive,AZ,32.0848,-110.7122,0.82,668,13,87.97,Business,Graduate/Professional Certificate,science
+190,Nico Fellgett,nfellgett59@comsenz.com,M,9 Dunning Circle,WA,47.1126,-122.7794,1.76,803,9,47.06,Computer Science,Undergraduate Certificate or Diploma,science
+191,Sylas Klaves,sklaves5a@artisteer.com,F,31 Harper Terrace,NJ,40.2805,-74.712,0.04,927,24,96.56,None,Post-baccalaureate Certificate,computer
+192,Korey Lukasen,klukasen5b@oakley.com,M,3 Brentwood Way,NE,41.2933,-95.9361,1.81,1102,34,6.85,Computer Science,Bachelor's Degree,communication
+193,Alejoa Adolphine,aadolphine5c@go.com,M,49752 Oakridge Junction,CA,34.84,-115.9671,3.72,566,20,95.9,History,First Professional Degree,nursing
+194,Ralf Bearcroft,rbearcroft5d@hostgator.com,F,22 Scoville Trail,CA,34.1446,-117.3013,2.25,1354,25,83.16,Sciences,Bachelor's Degree,engineering
+195,Luella Damper,ldamper5e@imageshack.us,F,7173 Forest Run Crossing,FL,26.6459,-80.4303,3.88,1049,26,30.14,Computer Science,Undergraduate Certificate or Diploma,science
+196,Katrinka Bhar,kbhar5f@bluehost.com,M,96 Nancy Circle,KS,37.6808,-97.1558,1.71,1460,35,30.47,Arts,Bachelor's Degree,design
+197,Langsdon Potbury,lpotbury5g@wired.com,F,8846 Memorial Circle,GA,31.9714,-81.0716,0.34,1305,31,95.73,None,Master's Degree,social
+198,Eadie Ginsie,eginsie5h@google.cn,F,6 International Center,FL,25.9597,-80.1403,2.8,1220,25,17.18,Computer Science,Associate's Degree,psychology
+199,Chad Walthew,cwalthew5i@e-recht24.de,F,8687 Carey Avenue,VA,37.5593,-77.4471,2.17,535,6,6.53,Computer Science,First Professional Degree,management
+200,Cosme Patrick,cpatrick5j@quantcast.com,M,1448 Eliot Place,IA,41.613,-90.6063,0.87,1380,35,65.49,Sciences,Doctoral Degree,communication
