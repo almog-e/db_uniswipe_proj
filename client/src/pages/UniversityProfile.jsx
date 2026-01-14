@@ -3,16 +3,18 @@ import { Link, useParams } from "react-router-dom";
 import { getUniversity } from "../services/universitiesService";
 import { addMatch } from "../services/matchesStorage";
 import AppNavbar from "../components/AppNavbar";
+import { useAuth } from "../auth/AuthContext";
 
 export default function UniversityProfile() {
     const { id } = useParams();
+    const { user } = useAuth();
     const [uni, setUni] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         let mounted = true;
-        getUniversity(id)
+        getUniversity(id, user?.user_id)
             .then((data) => {
                 if (!mounted) return;
                 setUni(data);
@@ -109,7 +111,68 @@ export default function UniversityProfile() {
                             </p>
                         )}
 
-                        <h3>Website</h3>
+                        <h3 style={{ marginTop: 32 }}>Programs Offered</h3>
+                        {uni.programs && uni.programs.length > 0 ? (
+                            <div style={{ marginTop: 12, display: 'grid', gap: 12 }}>
+                                {uni.programs.map((program, idx) => {
+                                    const isMatch = program.isMatch;
+                                    return (
+                                        <div
+                                            key={idx}
+                                            style={{
+                                                padding: 16,
+                                                borderRadius: 12,
+                                                border: isMatch ? '3px solid #4CAF50' : '1px solid rgba(0,0,0,0.1)',
+                                                backgroundColor: isMatch ? '#222222' : '#706c6c',
+                                                boxShadow: isMatch ? '0 4px 12px rgba(76, 175, 80, 0.3)' : 'none',
+                                                transform: isMatch ? 'scale(1.02)' : 'scale(1)',
+                                                transition: 'all 0.2s ease',
+                                                position: 'relative'
+                                            }}
+                                        >
+                                            {isMatch && (
+                                                <div style={{
+                                                    position: 'absolute',
+                                                    top: 12,
+                                                    right: 12,
+                                                    padding: '4px 12px',
+                                                    borderRadius: 8,
+                                                    backgroundColor: '#4CAF50',
+                                                    color: 'white',
+                                                    fontWeight: 700,
+                                                    fontSize: 12
+                                                }}>
+                                                    ✓ BEST MATCH
+                                                </div>
+                                            )}
+                                            <div style={{ fontWeight: 700, fontSize: 16, color: isMatch ? '#2e7d32' : 'inherit' }}>
+                                                {program.name}
+                                            </div>
+                                            <div style={{ opacity: 0.7, marginTop: 4 }}>
+                                                {program.degree_type}
+                                            </div>
+                                            {(program.roi_score || program.earn_1year || program.earn_2years) && (
+                                                <div style={{ marginTop: 5, fontSize: 10 }}>
+                                                    {program.roi_score && (
+                                                        <div><strong>ROI Score:</strong> {program.roi_score.toFixed(1)}</div>
+                                                    )}
+                                                    {program.earn_1year && (
+                                                        <div><strong>1-Year Earnings:</strong> ${program.earn_1year.toLocaleString()}</div>
+                                                    )}
+                                                    {program.earn_2years && (
+                                                        <div><strong>2-Year Earnings:</strong> ${program.earn_2years.toLocaleString()}</div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        ) : (
+                            <p style={{ opacity: 0.6 }}>No program data available</p>
+                        )}
+
+                        <h3 style={{ marginTop: 32 }}>Website</h3>
                         <a href={uni.website?.startsWith('http') ? uni.website : `https://${uni.website}`} target="_blank" rel="noreferrer">
                             {uni.website}
                         </a>

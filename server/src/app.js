@@ -8,7 +8,8 @@ import stateRouter from './routes/states.js';
 import accountCheckRouter from './routes/account_check.js';
 import userPrefRouter from './routes/user_pref.js';
 import adminRouter from './routes/admin.js';
-
+import programsRouter from './routes/programs.js';
+import degreeTypeRouter from './routes/degree_type.js';
 
 dotenv.config();
 
@@ -29,6 +30,9 @@ app.use('/api/admin', adminRouter);
 app.use('/api/states', stateRouter);
 app.use('/api/account_check', accountCheckRouter);
 app.use('/api/user_pref', userPrefRouter);
+app.use('/api/programs', programsRouter);
+app.use('/api/degreeType', degreeTypeRouter);
+
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 
