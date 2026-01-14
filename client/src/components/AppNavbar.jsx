@@ -31,6 +31,54 @@ export default function AppNavbar() {
             </div>
 
             <div style={{ display: "flex", gap: 10 }}>
+                <button
+                    type="button"
+                    onClick={() => navigate("/")}
+                    style={{
+                        padding: "8px 12px",
+                        borderRadius: 8,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "white",
+                        color: "black",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    Discover
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => navigate("/matches")}
+                    style={{
+                        padding: "8px 12px",
+                        borderRadius: 8,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "white",
+                        color: "black",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    My Matches
+                </button>
+
+                <button
+                    type="button"
+                    onClick={() => navigate("/settings")}
+                    style={{
+                        padding: "8px 12px",
+                        borderRadius: 8,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "white",
+                        color: "black",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    Preferences
+                </button>
+
                 {user.role === "admin" && (
                     <button
                         type="button"
@@ -40,7 +88,9 @@ export default function AppNavbar() {
                             borderRadius: 8,
                             border: "1px solid rgba(0,0,0,0.2)",
                             background: "black",
+                            color: "white",
                             cursor: "pointer",
+                            fontWeight: 600,
                         }}
                     >
                         Admin
@@ -55,7 +105,9 @@ export default function AppNavbar() {
                         borderRadius: 8,
                         border: "1px solid rgba(0,0,0,0.2)",
                         background: "black",
+                        color: "white",
                         cursor: "pointer",
+                        fontWeight: 600,
                     }}
                 >
                     Logout

@@ -6,6 +6,7 @@ import universitiesRouter from './routes/universities.js';
 import usersRouter from './routes/users.js';
 import stateRouter from './routes/states.js';
 import accountCheckRouter from './routes/account_check.js';
+import userPrefRouter from './routes/user_pref.js';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use('/api/users', usersRouter);
 
 app.use('/api/states', stateRouter);
 app.use('/api/account_check', accountCheckRouter);
+app.use('/api/user_pref', userPrefRouter);
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 

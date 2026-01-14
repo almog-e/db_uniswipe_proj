@@ -8,6 +8,9 @@ function RegisterPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [gpa, setGpa] = useState("");
+    const [satScore, setSatScore] = useState("");
+    const [actScore, setActScore] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
@@ -19,7 +22,7 @@ function RegisterPage() {
         setError("");
         setSuccess("");
 
-        if (!fullName || !email || !password || !confirmPassword) {
+        if (!fullName || !email || !password || !confirmPassword || !gpa || !satScore || !actScore) {
             setError("Please fill in all fields.");
             return;
         }
@@ -34,10 +37,38 @@ function RegisterPage() {
             return;
         }
 
-        await register({ fullName, email, password });
-        setSuccess("Account created! (Simulation only for now)");
+        const gpaNum = parseFloat(gpa);
+        if (gpaNum < 0 || gpaNum > 5.0) {
+            setError("GPA must be between 0 and 5.0.");
+            return;
+        }
 
-        setTimeout(() => navigate("/login"), 600);
+        const satNum = parseInt(satScore);
+        if (satNum < 400 || satNum > 1600) {
+            setError("SAT score must be between 400 and 1600.");
+            return;
+        }
+
+        const actNum = parseInt(actScore);
+        if (actNum < 1 || actNum > 36) {
+            setError("ACT score must be between 1 and 36.");
+            return;
+        }
+
+        try {
+            await register({
+                fullName,
+                email,
+                password,
+                gpa: parseFloat(gpa),
+                satScore: parseInt(satScore),
+                actScore: parseInt(actScore)
+            });
+            setSuccess("Account created successfully!");
+            setTimeout(() => navigate("/login"), 1500);
+        } catch (err) {
+            setError(err.message || "Registration failed. Please try again.");
+        }
     };
 
     return (
@@ -102,6 +133,49 @@ function RegisterPage() {
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             placeholder="••••••••"
+                        />
+                    </label>
+
+                    <label className="login-label">
+                        GPA
+                        <input
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            max="5.0"
+                            className="login-input"
+                            value={gpa}
+                            onChange={(e) => setGpa(e.target.value)}
+                            placeholder="3.5"
+                            required
+                        />
+                    </label>
+
+                    <label className="login-label">
+                        SAT Score
+                        <input
+                            type="number"
+                            min="400"
+                            max="1600"
+                            className="login-input"
+                            value={satScore}
+                            onChange={(e) => setSatScore(e.target.value)}
+                            placeholder="1200"
+                            required
+                        />
+                    </label>
+
+                    <label className="login-label">
+                        ACT Score
+                        <input
+                            type="number"
+                            min="1"
+                            max="36"
+                            className="login-input"
+                            value={actScore}
+                            onChange={(e) => setActScore(e.target.value)}
+                            placeholder="24"
+                            required
                         />
                     </label>
 
