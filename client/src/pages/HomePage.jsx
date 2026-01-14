@@ -2,23 +2,37 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUniversities } from "../services/universitiesService";
 import SwipeCard from "../components/SwipeCard";
-import { addMatch } from "../services/matchesStorage";
+import { addMatch, getMatches } from "../services/matchesStorage";
 import AppNavbar from "../components/AppNavbar";
+import { useAuth } from "../auth/AuthContext";
 
 export default function HomePage() {
     const navigate = useNavigate();
+    const { user } = useAuth();
 
     const [index, setIndex] = useState(0);
     const [stack, setStack] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filterMode, setFilterMode] = useState('1');
 
     useEffect(() => {
         let mounted = true;
-        getUniversities()
+        setLoading(true);
+        setIndex(0);
+
+        getUniversities(filterMode, user?.user_id)
             .then((data) => {
                 if (!mounted) return;
-                setStack(Array.isArray(data) ? data : []);
+
+                // Filter out universities that are already matched
+                const matches = getMatches();
+                const matchedIds = new Set(matches.map(m => m.id));
+                const unmatched = Array.isArray(data)
+                    ? data.filter(uni => !matchedIds.has(uni.id))
+                    : [];
+
+                setStack(unmatched);
             })
             .catch((e) => {
                 console.error(e);
@@ -26,7 +40,7 @@ export default function HomePage() {
             })
             .finally(() => mounted && setLoading(false));
         return () => { mounted = false; };
-    }, []);
+    }, [filterMode]);
 
     const current = stack[index];
 
@@ -54,12 +68,32 @@ export default function HomePage() {
                     gap: 12,
                 }}
             >
-                <div>
+                <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 18, fontWeight: 800 }}>Discover</div>
                     <div style={{ opacity: 0.75, marginTop: 4, fontSize: 13 }}>
                         Swipe right to MATCH, left to REJECT
                     </div>
                 </div>
+
+                <select
+                    value={filterMode}
+                    onChange={(e) => setFilterMode(e.target.value)}
+                    style={{
+                        padding: "10px 12px",
+                        borderRadius: 10,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "gray",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                        fontSize: 14
+                    }}
+                >
+                    <option value="1">All Universities</option>
+                    <option value="2">In Your region</option>
+                    <option value="3">By Degree field</option>
+                    <option value="4">By Preference Algorithm</option>
+                    <option value="5">Filter Mode 5</option>
+                </select>
 
                 <button
                     type="button"
@@ -69,6 +103,7 @@ export default function HomePage() {
                         borderRadius: 10,
                         border: "1px solid rgba(0,0,0,0.2)",
                         background: "black",
+                        color: "white",
                         cursor: "pointer",
                         fontWeight: 700,
                     }}

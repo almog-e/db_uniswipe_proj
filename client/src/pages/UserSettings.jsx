@@ -15,30 +15,40 @@ export default function UserSettings() {
         min_roi: ""
     });
 
+    const [states, setStates] = useState([]);
+    const [degreeTypes, setDegreeTypes] = useState([]);
+    const [programs, setPrograms] = useState([]);
     const [loading, setLoading] = useState(true);
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
 
-    // Load user preferences on mount
+    // Load states, degree types, programs, and user preferences on mount
     useEffect(() => {
-        if (!user) return;
+        if (!user || !user.user_id) return;
 
-        // For now, use a mock user_id. In production, get this from auth context
-        const userId = 1; // TODO: Get from authenticated user
+        const userId = user.user_id;
 
-        request(`/api/user_pref/${userId}`)
-            .then((data) => {
-                if (data) {
+        Promise.all([
+            request('/api/states'),
+            request('/api/degreeType'),
+            request('/api/programs'),
+            request(`/api/user_pref/${userId}`)
+        ])
+            .then(([statesData, degreeTypesData, programsData, prefsData]) => {
+                setStates(statesData || []);
+                setDegreeTypes(degreeTypesData || []);
+                setPrograms(programsData || []);
+                if (prefsData) {
                     setPreferences({
-                        preferred_region: data.preferred_region || "",
-                        preferred_degree_type: data.preferred_degree_type || "",
-                        preferred_field_category: data.preferred_field_category || "",
-                        min_roi: data.min_roi || ""
+                        preferred_region: prefsData.preferred_region || "",
+                        preferred_degree_type: prefsData.preferred_degree_type || "",
+                        preferred_field_category: prefsData.preferred_field_category || "",
+                        min_roi: prefsData.min_roi || ""
                     });
                 }
             })
             .catch((err) => {
-                console.error("Failed to load preferences:", err);
+                console.error("Failed to load data:", err);
             })
             .finally(() => setLoading(false));
     }, [user]);
@@ -48,9 +58,19 @@ export default function UserSettings() {
         setError("");
         setSuccess("");
 
+        // Validate min_roi range
+        const roi = Number(preferences.min_roi);
+        if (preferences.min_roi !== "" && (roi < 0 || roi > 100)) {
+            setError("Minimum ROI must be between 0 and 100");
+            return;
+        }
+
         try {
-            // For now, use a mock user_id. In production, get this from auth context
-            const userId = 1; // TODO: Get from authenticated user
+            if (!user || !user.user_id) {
+                throw new Error('User not authenticated');
+            }
+
+            const userId = user.user_id;
 
             await request(`/api/user_pref/${userId}`, {
                 method: 'PUT',
@@ -112,72 +132,84 @@ export default function UserSettings() {
                 <form onSubmit={handleSubmit}>
                     <div style={{ marginBottom: 24 }}>
                         <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
-                            Preferred Region
+                            Preferred State
                         </label>
-                        <input
-                            type="text"
+                        <select
                             value={preferences.preferred_region}
                             onChange={(e) => setPreferences({ ...preferences, preferred_region: e.target.value })}
-                            placeholder="e.g., Northeast, Southwest, Midwest"
                             style={{
                                 width: "100%",
                                 padding: 10,
                                 borderRadius: 8,
                                 border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14
+                                fontSize: 14,
+                                backgroundColor: "gray"
                             }}
-                        />
+                        >
+                            <option value="">Select a state...</option>
+                            {states.map(state => (
+                                <option key={state.state_code} value={state.state_code}>{state.state_code} - {state.state_name}</option>
+                            ))}
+                        </select>
                     </div>
 
                     <div style={{ marginBottom: 24 }}>
                         <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
                             Preferred Degree Type
                         </label>
-                        <input
-                            type="text"
+                        <select
                             value={preferences.preferred_degree_type}
                             onChange={(e) => setPreferences({ ...preferences, preferred_degree_type: e.target.value })}
-                            placeholder="e.g., Bachelor's, Master's, PhD"
                             style={{
                                 width: "100%",
                                 padding: 10,
                                 borderRadius: 8,
                                 border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14
+                                fontSize: 14,
+                                backgroundColor: "gray"
                             }}
-                        />
+                        >
+                            <option value="">Select a degree type...</option>
+                            {degreeTypes.map(type => (
+                                <option key={type} value={type}>{type}</option>
+                            ))}
+                        </select>
                     </div>
 
                     <div style={{ marginBottom: 24 }}>
                         <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
-                            Preferred Field Category
+                            Preferred Field/Program
                         </label>
-                        <input
-                            type="text"
+                        <select
                             value={preferences.preferred_field_category}
                             onChange={(e) => setPreferences({ ...preferences, preferred_field_category: e.target.value })}
-                            placeholder="e.g., STEM, Business, Arts, Healthcare"
                             style={{
                                 width: "100%",
                                 padding: 10,
                                 borderRadius: 8,
                                 border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14
+                                fontSize: 14,
+                                backgroundColor: "gray"
                             }}
-                        />
+                        >
+                            <option value="">Select a program...</option>
+                            {programs.map(program => (
+                                <option key={program} value={program}>{program}</option>
+                            ))}
+                        </select>
                     </div>
 
                     <div style={{ marginBottom: 24 }}>
                         <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
-                            Minimum ROI (Return on Investment)
+                            Minimum ROI (0-100)
                         </label>
                         <input
                             type="number"
-                            step="0.01"
                             min="0"
+                            max="100"
                             value={preferences.min_roi}
                             onChange={(e) => setPreferences({ ...preferences, min_roi: e.target.value })}
-                            placeholder="e.g., 1.5"
+                            placeholder="Enter value between 1-100"
                             style={{
                                 width: "100%",
                                 padding: 10,
@@ -196,7 +228,7 @@ export default function UserSettings() {
                                 padding: "12px 24px",
                                 borderRadius: 8,
                                 border: "1px solid rgba(0,0,0,0.2)",
-                                background: "white",
+                                background: "gray",
                                 cursor: "pointer",
                                 fontWeight: 600
                             }}

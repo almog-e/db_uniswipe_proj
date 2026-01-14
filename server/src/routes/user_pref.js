@@ -54,8 +54,14 @@ router.put(
             [userId]
         );
 
+        console.log('=== USER PREFERENCE UPDATE ===');
+        console.log('User ID:', userId);
+        console.log('Data:', { preferred_region, preferred_degree_type, preferred_field_category, min_roi });
+        console.log('Existing preferences:', existing.length > 0 ? 'YES' : 'NO');
+
         if (existing.length > 0) {
             // Update existing preferences
+            console.log('Updating existing preference...');
             await db.query(
                 `UPDATE user_preferences
                 SET preferred_region = ?,
@@ -65,14 +71,21 @@ router.put(
                 WHERE user_id = ?`,
                 [preferred_region, preferred_degree_type, preferred_field_category, min_roi, userId]
             );
+            console.log('Preference updated successfully');
         } else {
             // Insert new preferences
+            console.log('=== INSERTING NEW PREFERENCE ===');
+            console.log('User ID:', userId);
+            console.log('Data:', { preferred_region, preferred_degree_type, preferred_field_category, min_roi });
+
             await db.query(
                 `INSERT INTO user_preferences
                 (user_id, preferred_region, preferred_degree_type, preferred_field_category, min_roi)
                 VALUES (?, ?, ?, ?, ?)`,
                 [userId, preferred_region, preferred_degree_type, preferred_field_category, min_roi]
             );
+
+            console.log('Preference inserted successfully');
         }
 
         res.json({
