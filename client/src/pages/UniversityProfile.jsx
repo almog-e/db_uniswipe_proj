@@ -72,7 +72,7 @@ export default function UniversityProfile() {
                         <div>
                             <h1 style={{ margin: 0 }}>{uni.name}</h1>
                             <div style={{ opacity: 0.75, marginTop: 6 }}>
-                                {uni.city}, {uni.country} • {uni.tagline}
+                                {uni.city}, {uni.state} • {uni.public_private}
                             </div>
                         </div>
 
@@ -85,6 +85,7 @@ export default function UniversityProfile() {
                                 borderRadius: 12,
                                 border: "1px solid rgba(0,0,0,0.2)",
                                 background: "black",
+                                color: "white",
                                 cursor: "pointer",
                                 fontWeight: 800,
                                 whiteSpace: "nowrap",
@@ -95,18 +96,21 @@ export default function UniversityProfile() {
                     </div>
 
                     <div style={{ lineHeight: 1.6 }}>
-                        <h3>About</h3>
-                        <p style={{ marginTop: 6 }}>{uni.description}</p>
-
-                        <h3>Programs</h3>
-                        <ul>
-                            {uni.programs.map((p) => (
-                                <li key={p}>{p}</li>
-                            ))}
-                        </ul>
+                        <h3>Details</h3>
+                        <p style={{ marginTop: 6 }}>
+                            <strong>Location:</strong> {uni.city}, {uni.state} {uni.zip}
+                        </p>
+                        <p>
+                            <strong>Type:</strong> {uni.public_private}
+                        </p>
+                        {uni.admission_rate !== null && (
+                            <p>
+                                <strong>Admission Rate:</strong> {(uni.admission_rate * 100).toFixed(1)}%
+                            </p>
+                        )}
 
                         <h3>Website</h3>
-                        <a href={uni.website} target="_blank" rel="noreferrer">
+                        <a href={uni.website?.startsWith('http') ? uni.website : `https://${uni.website}`} target="_blank" rel="noreferrer">
                             {uni.website}
                         </a>
                     </div>

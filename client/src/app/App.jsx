@@ -6,6 +6,7 @@ import RegisterPage from "../pages/RegisterPage";
 import HomePage from "../pages/HomePage";
 import UniversityProfile from "../pages/UniversityProfile";
 import MatchesPage from "../pages/MatchesPage";
+import UserSettings from "../pages/UserSettings";
 
 import AdminDashboard from "../admin/AdminDashboard";
 
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/u/:id" element={<UniversityProfile />} />
             <Route path="/matches" element={<MatchesPage />} />
+            <Route path="/settings" element={<UserSettings />} />
           </Route>
 
           <Route element={<AdminRoute />}>
