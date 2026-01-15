@@ -7,7 +7,7 @@ import usersRouter from './routes/users.js';
 import stateRouter from './routes/states.js';
 import accountCheckRouter from './routes/account_check.js';
 import userPrefRouter from './routes/user_pref.js';
-import adminRouter from './routes/admin.js';
+import analyticsRouter from './routes/analytics.js';
 import programsRouter from './routes/programs.js';
 import degreeTypeRouter from './routes/degree_type.js';
 
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use('/api/institutions', universitiesRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/admin', adminRouter);
+app.use('/api/analytics', analyticsRouter);
 app.use('/api/states', stateRouter);
 app.use('/api/account_check', accountCheckRouter);
 app.use('/api/user_pref', userPrefRouter);

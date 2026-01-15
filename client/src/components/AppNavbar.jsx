@@ -65,6 +65,22 @@ export default function AppNavbar() {
 
                 <button
                     type="button"
+                    onClick={() => navigate("/analytics")}
+                    style={{
+                        padding: "8px 12px",
+                        borderRadius: 8,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "white",
+                        color: "black",
+                        cursor: "pointer",
+                        fontWeight: 600,
+                    }}
+                >
+                    Analytics
+                </button>
+                
+                <button
+                    type="button"
                     onClick={() => navigate("/settings")}
                     style={{
                         padding: "8px 12px",
