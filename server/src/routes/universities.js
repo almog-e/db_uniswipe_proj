@@ -93,7 +93,6 @@ router.get(
 
         let query;
         switch (mode) {
-            switch (mode) {
             case '1':
                 query = `SELECT inst.uni_id, inst.name, inst.state, inst.city, inst.zip, inst.public_private, inst.admission_rate, inst.site_url, inst.logo_url, adm.sat_avg, adm.act_avg
                         FROM institutions AS inst
