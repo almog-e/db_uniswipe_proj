@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import "./AppNavbar.css";
 
 export default function AppNavbar() {
     const { user, logout } = useAuth();
@@ -13,68 +14,46 @@ export default function AppNavbar() {
     };
 
     return (
-        <div
-            style={{
-                padding: "12px 16px",
-                borderBottom: "1px solid rgba(0,0,0,0.12)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-            }}
-        >
-            <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div className="app-navbar">
+            <div className="app-navbar-left">
                 <strong>UniMatch</strong>
-                <span style={{ opacity: 0.8 }}>
+                <span className="app-navbar-email">
                     {user.email}
-                    {user.role ? ` (${user.role})` : ""}
+                </span>
+                <span className="app-navbar-scores" style={{
+                    marginLeft: 12,
+                    background: "#f3f3f3",
+                    color: "#222",
+                    borderRadius: 6,
+                    padding: "2px 8px",
+                    fontSize: "0.95em",
+                    border: "1px solid #ccc"
+                }}>
+                    SAT: {user.sat_score ?? "-"} | ACT: {user.act_score ?? "-"}
                 </span>
             </div>
 
-            <div style={{ display: "flex", gap: 10 }}>
+            <div className="app-navbar-buttons">
                 <button
                     type="button"
                     onClick={() => navigate("/")}
-                    style={{
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        border: "1px solid rgba(0,0,0,0.2)",
-                        background: "white",
-                        color: "black",
-                        cursor: "pointer",
-                        fontWeight: 600,
-                    }}
+                    className="app-navbar-btn"
                 >
                     Discover
                 </button>
 
                 <button
                     type="button"
-                    onClick={() => navigate("/matches")}
-                    style={{
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        border: "1px solid rgba(0,0,0,0.2)",
-                        background: "white",
-                        color: "black",
-                        cursor: "pointer",
-                        fontWeight: 600,
-                    }}
+                    onClick={() => navigate("/likes")}
+                    className="app-navbar-btn"
                 >
-                    My Matches
+                    My Likes
                 </button>
 
                 <button
                     type="button"
                     onClick={() => navigate("/analytics")}
-                    style={{
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        border: "1px solid rgba(0,0,0,0.2)",
-                        background: "white",
-                        color: "black",
-                        cursor: "pointer",
-                        fontWeight: 600,
-                    }}
+                    className="app-navbar-btn"
                 >
                     Analytics
                 </button>
@@ -82,49 +61,15 @@ export default function AppNavbar() {
                 <button
                     type="button"
                     onClick={() => navigate("/settings")}
-                    style={{
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        border: "1px solid rgba(0,0,0,0.2)",
-                        background: "white",
-                        color: "black",
-                        cursor: "pointer",
-                        fontWeight: 600,
-                    }}
+                    className="app-navbar-btn"
                 >
                     Preferences
                 </button>
 
-                {user.role === "admin" && (
-                    <button
-                        type="button"
-                        onClick={() => navigate("/admin")}
-                        style={{
-                            padding: "8px 12px",
-                            borderRadius: 8,
-                            border: "1px solid rgba(0,0,0,0.2)",
-                            background: "black",
-                            color: "white",
-                            cursor: "pointer",
-                            fontWeight: 600,
-                        }}
-                    >
-                        Admin
-                    </button>
-                )}
-
                 <button
                     type="button"
                     onClick={onLogout}
-                    style={{
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        border: "1px solid rgba(0,0,0,0.2)",
-                        background: "black",
-                        color: "white",
-                        cursor: "pointer",
-                        fontWeight: 600,
-                    }}
+                    className="app-navbar-btn app-navbar-btn-black"
                 >
                     Logout
                 </button>

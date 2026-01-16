@@ -1,3 +1,9 @@
+/* Success message for RegisterPage */
+.login-success {
+    background-color: #e5ffe9;
+    color: #146c2e;
+    border-color: rgba(20,108,46,0.35);
+}
 body {
     direction: ltr;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -62,6 +68,7 @@ body {
     text-align: center;
     font-size: 1.9rem;
     letter-spacing: 0.03em;
+    color: #1e3c72;
 }
 
 .login-subtitle {
@@ -176,6 +183,17 @@ body {
     margin-top: 0.3rem;
 }
 
+.login-credentials {
+    background: #f3f3f3;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.98rem;
+    text-align: center;
+}
+
 @media (max-width: 480px) {
     .login-card {
         padding: 2.1rem 1.6rem 2rem;
@@ -183,6 +201,6 @@ body {
     }
 
     .login-title {
-        font-size: 1.6rem;
+        font-size: 12.6rem;
     }
 }

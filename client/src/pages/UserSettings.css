@@ -1,0 +1,103 @@
+/* UserSettings.css - All visual styles for UserSettings component */
+
+.usersettings-container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.usersettings-title {
+  margin-bottom: 8px;
+}
+
+.usersettings-subtitle {
+  opacity: 0.75;
+  margin-bottom: 24px;
+}
+
+.usersettings-error {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fee;
+  color: #c00;
+  border: 1px solid #fcc;
+}
+
+.usersettings-success {
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #efe;
+  color: #080;
+  border: 1px solid #cfc;
+}
+
+.usersettings-form-section {
+  margin-bottom: 24px;
+}
+
+.usersettings-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.usersettings-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 14px;
+  background-color: gray;
+}
+
+.usersettings-range-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.usersettings-range {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  accent-color: black;
+}
+
+.usersettings-range-marks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.usersettings-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.usersettings-btn-cancel {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: gray;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.usersettings-btn-save {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.usersettings-loading {
+  padding: 24px;
+  text-align: center;
+}

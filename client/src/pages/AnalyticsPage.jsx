@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
                 setResults(data);
             }
         } catch (err) {
-            console.error('Analytics:', err);
+            console.error('Analytics error:', err);
             setError(err.message || 'Failed to load analytics data');
             setResults(null);
         } finally {

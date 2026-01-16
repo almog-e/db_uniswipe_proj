@@ -1,0 +1,163 @@
+/* UniversityProfile.css - All visual styles for UniversityProfile component */
+
+.uni-profile-container {
+  padding: 18px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.uni-profile-back {
+  text-decoration: none;
+}
+
+.uni-profile-main {
+  margin-top: 14px;
+  display: grid;
+  gap: 16px;
+}
+
+.uni-profile-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: #e0e0e0;
+}
+
+.uni-profile-img-bg {
+  background: #e0e0e0;
+  width: 100%;
+  height: 400px;
+  color: #222;
+}
+
+.uni-profile-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  background: #d1d1d1ff;
+  display: block;
+  margin: 0 auto;
+}
+
+.uni-profile-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.uni-profile-title {
+  margin: 0;
+}
+
+.uni-profile-subtitle {
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.uni-profile-add-btn {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.uni-profile-details {
+  line-height: 1.6;
+}
+
+.uni-profile-section {
+  margin-top: 32px;
+}
+
+.uni-profile-programs {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.uni-profile-userprefs {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background-color: #29312aff;
+  border: 2px solid #4CAF50;
+}
+
+.uni-profile-userprefs-title {
+  margin: 0 0 12px 0;
+  color: #b9dabbff;
+}
+
+.uni-profile-userprefs-list {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.uni-profile-program-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: #706c6c;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.uni-profile-program-card.match {
+  border: 3px solid #4CAF50;
+  background-color: #222222;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  transform: scale(1.02);
+}
+
+.uni-profile-program-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.uni-profile-program-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+.uni-profile-program-title.match {
+  color: #2e7d32;
+}
+
+.uni-profile-program-degree {
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.uni-profile-program-extra {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.uni-profile-program-extra-empty {
+  margin-top: 5px;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.uni-profile-empty {
+  opacity: 0.6;
+}
+
+.uni-profile-error {
+  color: red;
+}
+
+.uni-profile-loading {
+  padding: 24px;
+}

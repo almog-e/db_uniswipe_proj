@@ -1,0 +1,32 @@
+.app-navbar {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-navbar-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.app-navbar-email {
+  opacity: 0.8;
+}
+.app-navbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+.app-navbar-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+}
+.app-navbar-btn-black {
+  background: black;
+  color: white;
+}

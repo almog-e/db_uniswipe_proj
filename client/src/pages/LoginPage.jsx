@@ -65,7 +65,7 @@ function LoginPage() {
         </form>
 
         <p className="login-footer">
-          Don&apos;t have an account?{" "}
+          Don't have an account?{" "}
           <button
             type="button"
             className="link-button"
@@ -75,9 +75,8 @@ function LoginPage() {
           </button>
         </p>
 
-        <div style={{ marginTop: 16, fontSize: 13, opacity: 0.8 }}>
+        <div className="login-credentials">
           <div>Fake User: user@test.com / 123456</div>
-          <div>Fake Admin: admin@test.com / admin123</div>
         </div>
       </div>
     </div>

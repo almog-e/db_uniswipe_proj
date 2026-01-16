@@ -1,9 +1,13 @@
+
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getUniversity } from "../services/universitiesService";
 import { addMatch } from "../services/matchesStorage";
 import AppNavbar from "../components/AppNavbar";
 import { useAuth } from "../auth/AuthContext";
+import { request } from "../services/api";
+import { fetchWikipediaLogo, getLocalPlaceholder } from "../services/wikipediaLogo";
+import "./UniversityProfile.css";
 
 export default function UniversityProfile() {
     const { id } = useParams();
@@ -11,27 +15,46 @@ export default function UniversityProfile() {
     const [uni, setUni] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [userPrefs, setUserPrefs] = useState(null);
+    const [logoUrl, setLogoUrl] = useState(null);
 
     useEffect(() => {
         let mounted = true;
-        getUniversity(id, user?.user_id)
+        
+        // Load university data
+        getUniversity(id, user && user.user_id)
             .then((data) => {
                 if (!mounted) return;
                 setUni(data);
+                fetchWikipediaLogo(data.name).then((url) => {
+                    if (mounted) setLogoUrl(url);
+                });
             })
             .catch((e) => {
                 console.error(e);
                 if (mounted) setError(e.message || 'Failed to load');
             })
             .finally(() => mounted && setLoading(false));
+        
+        // Load user preferences if user is logged in
+        if (user && user.user_id) {
+            request(`/api/user_pref/${user.user_id}`)
+                .then((prefs) => {
+                    if (mounted) setUserPrefs(prefs);
+                })
+                .catch((err) => {
+                    console.error("Failed to load user preferences:", err);
+                });
+        }
+        
         return () => { mounted = false; };
-    }, [id]);
+    }, [id, user]);
 
     if (loading) {
         return (
             <div>
                 <AppNavbar />
-                <div style={{ padding: 24 }}>{error ? <div style={{ color: 'red' }}>{error}</div> : 'Loading…'}</div>
+                <div className="uni-profile-loading">{error ? <div className="uni-profile-error">{error}</div> : 'Loading…'}</div>
             </div>
         );
     }
@@ -40,7 +63,7 @@ export default function UniversityProfile() {
         return (
             <div>
                 <AppNavbar />
-                <div style={{ padding: 24 }}>
+                <div className="uni-profile-loading">
                     <h2>Not found</h2>
                     <Link to="/">Back</Link>
                 </div>
@@ -51,53 +74,37 @@ export default function UniversityProfile() {
     return (
         <div>
             <AppNavbar />
-
-            <div style={{ padding: 18, maxWidth: 860, margin: "0 auto" }}>
-                <Link to="/" style={{ textDecoration: "none" }}>← Back</Link>
-
-                <div style={{ marginTop: 14, display: "grid", gap: 16 }}>
-                    <div
-                        style={{
-                            borderRadius: 18,
-                            overflow: "hidden",
-                            boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
-                        }}
-                    >
-                        <img
-                            src={uni.imageUrl}
-                            alt={uni.name}
-                            style={{ width: "100%", height: 420, objectFit: "cover" }}
-                        />
+            <div className="uni-profile-container">
+                <Link to="/" className="uni-profile-back">← Back</Link>
+                <div className="uni-profile-main">
+                    <div className="uni-profile-card">
+                        <div className="uni-profile-img-bg">
+                            <img
+                                src={logoUrl || getLocalPlaceholder(uni.name)}
+                                alt={uni.name}
+                                className="uni-profile-img"
+                                onError={e => {
+                                    e.currentTarget.src = getLocalPlaceholder(uni.name);
+                                }}
+                            />
+                        </div>
                     </div>
-
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                    <div className="uni-profile-header">
                         <div>
-                            <h1 style={{ margin: 0 }}>{uni.name}</h1>
-                            <div style={{ opacity: 0.75, marginTop: 6 }}>
+                            <h1 className="uni-profile-title">{uni.name}</h1>
+                            <div className="uni-profile-subtitle">
                                 {uni.city}, {uni.state} • {uni.public_private}
                             </div>
                         </div>
-
                         <button
                             type="button"
                             onClick={() => addMatch(uni)}
-                            style={{
-                                height: 44,
-                                padding: "0 14px",
-                                borderRadius: 12,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                background: "black",
-                                color: "white",
-                                cursor: "pointer",
-                                fontWeight: 800,
-                                whiteSpace: "nowrap",
-                            }}
+                            className="uni-profile-add-btn"
                         >
                             Add to Matches
                         </button>
                     </div>
-
-                    <div style={{ lineHeight: 1.6 }}>
+                    <div className="uni-profile-details">
                         <h3>Details</h3>
                         <p style={{ marginTop: 6 }}>
                             <strong>Location:</strong> {uni.city}, {uni.state} {uni.zip}
@@ -110,58 +117,61 @@ export default function UniversityProfile() {
                                 <strong>Admission Rate:</strong> {(uni.admission_rate * 100).toFixed(1)}%
                             </p>
                         )}
-
-                        <h3 style={{ marginTop: 32 }}>Programs Offered</h3>
+                        <h3 className="uni-profile-section">Programs Offered</h3>
+                        {userPrefs && uni.programs && uni.programs.some(p => p.isMatch) && (
+                            <div className="uni-profile-userprefs">
+                                <h4 className="uni-profile-userprefs-title">Your Preferences</h4>
+                                <div className="uni-profile-userprefs-list">
+                                    {userPrefs.preferred_field_category && (
+                                        <div><strong>Preferred Field:</strong> {userPrefs.preferred_field_category}</div>
+                                    )}
+                                    {userPrefs.preferred_degree_type && (
+                                        <div><strong>Preferred Degree:</strong> {userPrefs.preferred_degree_type}</div>
+                                    )}
+                                    {userPrefs.preferred_region && (
+                                        <div><strong>Preferred State:</strong> {userPrefs.preferred_region}</div>
+                                    )}
+                                    {userPrefs.min_roi && (
+                                        <div><strong>Minimum ROI:</strong> {userPrefs.min_roi}</div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
                         {uni.programs && uni.programs.length > 0 ? (
-                            <div style={{ marginTop: 12, display: 'grid', gap: 12 }}>
+                            <div className="uni-profile-programs">
                                 {uni.programs.map((program, idx) => {
                                     const isMatch = program.isMatch;
                                     return (
                                         <div
                                             key={idx}
-                                            style={{
-                                                padding: 16,
-                                                borderRadius: 12,
-                                                border: isMatch ? '3px solid #4CAF50' : '1px solid rgba(0,0,0,0.1)',
-                                                backgroundColor: isMatch ? '#222222' : '#706c6c',
-                                                boxShadow: isMatch ? '0 4px 12px rgba(76, 175, 80, 0.3)' : 'none',
-                                                transform: isMatch ? 'scale(1.02)' : 'scale(1)',
-                                                transition: 'all 0.2s ease',
-                                                position: 'relative'
-                                            }}
+                                            className={`uni-profile-program-card${isMatch ? ' match' : ''}`}
                                         >
                                             {isMatch && (
-                                                <div style={{
-                                                    position: 'absolute',
-                                                    top: 12,
-                                                    right: 12,
-                                                    padding: '4px 12px',
-                                                    borderRadius: 8,
-                                                    backgroundColor: '#4CAF50',
-                                                    color: 'white',
-                                                    fontWeight: 700,
-                                                    fontSize: 12
-                                                }}>
+                                                <div className="uni-profile-program-badge">
                                                     ✓ BEST MATCH
                                                 </div>
                                             )}
-                                            <div style={{ fontWeight: 700, fontSize: 16, color: isMatch ? '#2e7d32' : 'inherit' }}>
+                                            <div className={`uni-profile-program-title${isMatch ? ' match' : ''}`}>
                                                 {program.name}
                                             </div>
-                                            <div style={{ opacity: 0.7, marginTop: 4 }}>
+                                            <div className="uni-profile-program-degree">
                                                 {program.degree_type}
                                             </div>
-                                            {(program.roi_score || program.earn_1year || program.earn_2years) && (
-                                                <div style={{ marginTop: 5, fontSize: 10 }}>
-                                                    {program.roi_score && (
+                                            {(program.roi_score > 0 || program.earn_1year > 0 || program.earn_2years > 0) ? (
+                                                <div className="uni-profile-program-extra">
+                                                    {program.roi_score > 0 && (
                                                         <div><strong>ROI Score:</strong> {program.roi_score.toFixed(1)}</div>
                                                     )}
-                                                    {program.earn_1year && (
+                                                    {program.earn_1year > 0 && (
                                                         <div><strong>1-Year Earnings:</strong> ${program.earn_1year.toLocaleString()}</div>
                                                     )}
-                                                    {program.earn_2years && (
+                                                    {program.earn_2years > 0 && (
                                                         <div><strong>2-Year Earnings:</strong> ${program.earn_2years.toLocaleString()}</div>
                                                     )}
+                                                </div>
+                                            ) : (
+                                                <div className="uni-profile-program-extra-empty">
+                                                    Please contact university to get more details.
                                                 </div>
                                             )}
                                         </div>
@@ -169,10 +179,9 @@ export default function UniversityProfile() {
                                 })}
                             </div>
                         ) : (
-                            <p style={{ opacity: 0.6 }}>No program data available</p>
+                            <p className="uni-profile-empty">Please contact university to get more details.</p>
                         )}
-
-                        <h3 style={{ marginTop: 32 }}>Website</h3>
+                        <h3 className="uni-profile-section">Website</h3>
                         <a href={uni.website?.startsWith('http') ? uni.website : `https://${uni.website}`} target="_blank" rel="noreferrer">
                             {uni.website}
                         </a>

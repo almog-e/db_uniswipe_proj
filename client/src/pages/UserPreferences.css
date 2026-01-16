@@ -1,0 +1,65 @@
+/* UserPreferences.css - All visual styles for UserPreferences component */
+
+.userprefs-container {
+  /* Add padding or layout if needed */
+}
+
+.userprefs-satact-box {
+  background: #f3f3f3;
+  color: #222;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  margin: 18px auto 8px auto;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 320px;
+}
+
+.userprefs-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.userprefs-card-stack {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.userprefs-actions {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.userprefs-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.userprefs-btn.dislike {
+  background: #e53e3e;
+}
+
+.userprefs-btn.like {
+  background: #2563eb;
+}
+
+.userprefs-empty {
+  opacity: 0.7;
+  margin-top: 24px;
+  font-size: 18px;
+}

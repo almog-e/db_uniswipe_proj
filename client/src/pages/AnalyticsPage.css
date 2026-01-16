@@ -52,11 +52,11 @@
 .query-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #000;
 }
 
 .query-card p {
-    color: #666;
+    color: #000;
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -68,7 +68,7 @@
 }
 
 .results-container {
-    background: white;
+    background: rgb(82, 82, 82);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@
 
 .results-header h3 {
     font-size: 1.8rem;
-    color: #333;
+    color: #000;
     margin: 0;
 }
 
@@ -157,7 +157,7 @@
     padding: 1rem;
     text-align: left;
     font-weight: 600;
-    color: #374151;
+    color: #000;
     border-bottom: 2px solid #e5e7eb;
     white-space: nowrap;
 }
