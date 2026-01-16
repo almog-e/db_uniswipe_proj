@@ -1,0 +1,83 @@
+/* LikesPage.css - All visual styles for LikesPage component */
+
+.likes-container {
+  padding: 18px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.likes-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.likes-title {
+  margin: 0;
+}
+
+.likes-subtitle {
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.likes-list {
+  margin-top: 14px;
+}
+
+.likes-back-link {
+  text-decoration: none;
+}
+
+.likes-card {
+  background: #e0e0e0;
+  width: 100%;
+  height: 160px;
+}
+
+.likes-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.likes-card-content {
+  padding: 12px;
+}
+
+.likes-card-title {
+  font-weight: 800;
+}
+
+.likes-card-desc {
+  opacity: 0.75;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.likes-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.likes-empty {
+  opacity: 0.75;
+}
+
+.likes-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-btn {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}

@@ -1,0 +1,219 @@
+/* HomePage.css - All visual styles for HomePage component */
+
+.homepage-navbar {
+  /* Reserved for navbar overrides if needed */
+}
+
+.homepage-header {
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.homepage-header-left {
+  flex: 1;
+}
+
+.homepage-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.homepage-subtitle {
+  opacity: 0.75;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.homepage-select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: gray;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.homepage-likes-btn {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.homepage-main {
+  height: calc(100vh - 160px);
+  padding: 0 18px 18px;
+}
+
+.homepage-loading-more {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.homepage-card-stack {
+  max-width: 420px;
+  height: 100%;
+  min-height: 600px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.homepage-loading,
+.homepage-empty {
+  height: 100%;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.homepage-empty {
+  border: 1px dashed rgba(0,0,0,0.25);
+}
+
+.homepage-empty-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.homepage-empty-subtitle {
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.homepage-restart-btn {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: black;
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+}
+
+.homepage-card-bg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 320px;
+  height: 400px;
+  border-radius: 18px;
+  background: #ddd;
+  transform: translateX(-50%) scale(0.98) translateY(8px);
+  filter: blur(0.2px);
+  z-index: 0;
+}
+
+.homepage-card-outer {
+  width: 320px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.homepage-action-btns {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  z-index: 3;
+}
+
+.action-btn {
+  pointer-events: auto;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.2);
+  background: rgba(36, 139, 50, 0.95);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 18px;
+  min-width: 100px;
+  box-shadow: 0 2px 8px #0002;
+  color: #fff;
+}
+
+.action-btn.dislike {
+  background: #e53e3e;
+}
+
+.action-btn.like {
+  background: #2563eb;
+}
+
+/* MatchPopup styles */
+.match-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.match-popup {
+  background: #444444ff;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 280px;
+  box-shadow: 0 8px 32px #0002;
+  text-align: center;
+}
+.match-popup-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.match-popup-desc {
+  margin-bottom: 18px;
+}
+.match-popup-btn {
+  margin-right: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.match-popup-btn:last-child {
+  margin-right: 0;
+  background: #605757ff;
+}

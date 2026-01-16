@@ -10,6 +10,7 @@ Server setup
 3. Install dependencies and run server:
    - cd server
    - npm install
+   - npm install node-fetch@^3
    - npm run dev
 
 The server exposes:

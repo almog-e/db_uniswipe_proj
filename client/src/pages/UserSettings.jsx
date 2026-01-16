@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AppNavbar from "../components/AppNavbar";
+
 import { useAuth } from "../auth/AuthContext";
 import { request } from "../services/api";
+import "./UserSettings.css";
 
 export default function UserSettings() {
     const navigate = useNavigate();
@@ -22,7 +24,7 @@ export default function UserSettings() {
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
 
-    // Load states, degree types, programs, and user preferences on mount
+    // Load data and user preferences
     useEffect(() => {
         if (!user || !user.user_id) return;
 
@@ -58,7 +60,7 @@ export default function UserSettings() {
         setError("");
         setSuccess("");
 
-        // Validate min_roi range
+        // Check ROI range
         const roi = Number(preferences.min_roi);
         if (preferences.min_roi !== "" && (roi < 0 || roi > 100)) {
             setError("Minimum ROI must be between 0 and 100");
@@ -88,7 +90,7 @@ export default function UserSettings() {
         return (
             <div>
                 <AppNavbar />
-                <div style={{ padding: 24, textAlign: "center" }}>Loading...</div>
+                <div className="usersettings-loading">Loading...</div>
             </div>
         );
     }
@@ -96,55 +98,26 @@ export default function UserSettings() {
     return (
         <div>
             <AppNavbar />
-
-            <div style={{ padding: 24, maxWidth: 800, margin: "0 auto" }}>
-                <h1 style={{ marginBottom: 8 }}>My Preferences</h1>
-                <p style={{ opacity: 0.75, marginBottom: 24 }}>
+            <div className="usersettings-container">
+                <h1 className="usersettings-title">My Preferences</h1>
+                <p className="usersettings-subtitle">
                     Set your preferences to get better university recommendations.
                 </p>
-
                 {error && (
-                    <div style={{
-                        padding: 12,
-                        marginBottom: 16,
-                        borderRadius: 8,
-                        backgroundColor: "#fee",
-                        color: "#c00",
-                        border: "1px solid #fcc"
-                    }}>
-                        {error}
-                    </div>
+                    <div className="usersettings-error">{error}</div>
                 )}
-
                 {success && (
-                    <div style={{
-                        padding: 12,
-                        marginBottom: 16,
-                        borderRadius: 8,
-                        backgroundColor: "#efe",
-                        color: "#080",
-                        border: "1px solid #cfc"
-                    }}>
-                        {success}
-                    </div>
+                    <div className="usersettings-success">{success}</div>
                 )}
-
                 <form onSubmit={handleSubmit}>
-                    <div style={{ marginBottom: 24 }}>
-                        <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
+                    <div className="usersettings-form-section">
+                        <label className="usersettings-label">
                             Preferred State
                         </label>
                         <select
                             value={preferences.preferred_region}
                             onChange={(e) => setPreferences({ ...preferences, preferred_region: e.target.value })}
-                            style={{
-                                width: "100%",
-                                padding: 10,
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14,
-                                backgroundColor: "gray"
-                            }}
+                            className="usersettings-select"
                         >
                             <option value="">Select a state...</option>
                             {states.map(state => (
@@ -152,22 +125,14 @@ export default function UserSettings() {
                             ))}
                         </select>
                     </div>
-
-                    <div style={{ marginBottom: 24 }}>
-                        <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
+                    <div className="usersettings-form-section">
+                        <label className="usersettings-label">
                             Preferred Degree Type
                         </label>
                         <select
                             value={preferences.preferred_degree_type}
                             onChange={(e) => setPreferences({ ...preferences, preferred_degree_type: e.target.value })}
-                            style={{
-                                width: "100%",
-                                padding: 10,
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14,
-                                backgroundColor: "gray"
-                            }}
+                            className="usersettings-select"
                         >
                             <option value="">Select a degree type...</option>
                             {degreeTypes.map(type => (
@@ -175,22 +140,14 @@ export default function UserSettings() {
                             ))}
                         </select>
                     </div>
-
-                    <div style={{ marginBottom: 24 }}>
-                        <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
+                    <div className="usersettings-form-section">
+                        <label className="usersettings-label">
                             Preferred Field/Program
                         </label>
                         <select
                             value={preferences.preferred_field_category}
                             onChange={(e) => setPreferences({ ...preferences, preferred_field_category: e.target.value })}
-                            style={{
-                                width: "100%",
-                                padding: 10,
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14,
-                                backgroundColor: "gray"
-                            }}
+                            className="usersettings-select"
                         >
                             <option value="">Select a program...</option>
                             {programs.map(program => (
@@ -198,54 +155,36 @@ export default function UserSettings() {
                             ))}
                         </select>
                     </div>
-
-                    <div style={{ marginBottom: 24 }}>
-                        <label style={{ display: "block", fontWeight: 600, marginBottom: 8 }}>
-                            Minimum ROI (0-100)
+                    <div className="usersettings-form-section">
+                        <label className="usersettings-range-label">
+                            Minimum ROI: {preferences.min_roi || 0}
                         </label>
                         <input
-                            type="number"
+                            type="range"
                             min="0"
                             max="100"
-                            value={preferences.min_roi}
+                            step="1"
+                            value={preferences.min_roi || 0}
                             onChange={(e) => setPreferences({ ...preferences, min_roi: e.target.value })}
-                            placeholder="Enter value between 1-100"
-                            style={{
-                                width: "100%",
-                                padding: 10,
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                fontSize: 14
-                            }}
+                            className="usersettings-range"
                         />
+                        <div className="usersettings-range-marks">
+                            <span>0</span>
+                            <span>50</span>
+                            <span>100</span>
+                        </div>
                     </div>
-
-                    <div style={{ display: "flex", gap: 12 }}>
+                    <div className="usersettings-actions">
                         <button
                             type="button"
                             onClick={() => navigate("/")}
-                            style={{
-                                padding: "12px 24px",
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                background: "gray",
-                                cursor: "pointer",
-                                fontWeight: 600
-                            }}
+                            className="usersettings-btn-cancel"
                         >
                             Cancel
                         </button>
                         <button
                             type="submit"
-                            style={{
-                                padding: "12px 24px",
-                                borderRadius: 8,
-                                border: "1px solid rgba(0,0,0,0.2)",
-                                background: "black",
-                                color: "white",
-                                cursor: "pointer",
-                                fontWeight: 600
-                            }}
+                            className="usersettings-btn-save"
                         >
                             Save Preferences
                         </button>

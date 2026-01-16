@@ -80,12 +80,7 @@ function RegisterPage() {
                 {error && <div className="login-error">{error}</div>}
                 {success && (
                     <div
-                        className="login-error"
-                        style={{
-                            backgroundColor: "#e5ffe9",
-                            color: "#146c2e",
-                            borderColor: "rgba(20,108,46,0.35)",
-                        }}
+                        className="login-error login-success"
                     >
                         {success}
                     </div>

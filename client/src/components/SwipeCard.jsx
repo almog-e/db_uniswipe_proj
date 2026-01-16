@@ -1,16 +1,27 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, forwardRef, useImperativeHandle } from "react";
+import { fetchWikipediaLogo } from "../services/wikipediaLogo";
+import "./SwipeCard.css";
 
-export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
+const SwipeCard = forwardRef(function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen, renderActions }, ref) {
     const startRef = useRef({ x: 0, y: 0 });
     const draggingRef = useRef(false);
 
     const [pos, setPos] = useState({ x: 0, y: 0 });
     const [rot, setRot] = useState(0);
+    const [logoUrl, setLogoUrl] = useState(item.imageUrl);
 
     const threshold = 120;
 
     const likeOpacity = useMemo(() => clamp((pos.x - 40) / 120, 0, 1), [pos.x]);
     const nopeOpacity = useMemo(() => clamp((-pos.x - 40) / 120, 0, 1), [pos.x]);
+
+    useEffect(() => {
+        let ignore = false;
+        fetchWikipediaLogo(item.name).then(url => {
+            if (url && !ignore) setLogoUrl(url);
+        });
+        return () => { ignore = true; };
+    }, [item.name]);
 
     function onPointerDown(e) {
         draggingRef.current = true;
@@ -33,10 +44,12 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
         draggingRef.current = false;
 
         if (pos.x > threshold) {
+            console.debug('[SwipeCard] Swipe right via drag:', item);
             animateOut(800, pos.y, () => onSwipeRight(item));
             return;
         }
         if (pos.x < -threshold) {
+            console.debug('[SwipeCard] Swipe left via drag:', item);
             animateOut(-800, pos.y, () => onSwipeLeft(item));
             return;
         }
@@ -57,12 +70,25 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
         }, 180);
     }
 
+    // Expose animateOut globally for button triggers
+    useEffect(() => {
+        window.swipeCardAnimateOut = animateOut;
+        return () => {
+            if (window.swipeCardAnimateOut === animateOut) {
+                window.swipeCardAnimateOut = undefined;
+            }
+        };
+    }, [item]);
+
     const [isAnimating, setIsAnimating] = useState(false);
+
+    useImperativeHandle(ref, () => ({ animateOut }), [animateOut]);
 
     return (
         <div
             role="button"
             tabIndex={0}
+            className={`swipe-card${isAnimating ? " animating" : ""}`}
             onDoubleClick={() => onOpen(item)}
             onKeyDown={(e) => e.key === "Enter" && onOpen(item)}
             onPointerDown={onPointerDown}
@@ -70,101 +96,75 @@ export default function SwipeCard({ item, onSwipeLeft, onSwipeRight, onOpen }) {
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
             style={{
-                position: "absolute",
-                inset: 0,
-                borderRadius: 18,
-                overflow: "hidden",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.18)",
-                background: "#111",
-                cursor: "grab",
-                touchAction: "none",
-                userSelect: "none",
                 transform: `translate(${pos.x}px, ${pos.y}px) rotate(${rot}deg)`,
-                transition: isAnimating ? "transform 180ms ease-out" : "none",
             }}
             aria-label={`University card: ${item.name}`}
         >
             <img
-                src={item.imageUrl}
+                src={logoUrl}
                 alt={item.name}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                    filter: "contrast(1.05)",
-                }}
+                className="swipe-card-img"
                 draggable={false}
             />
-
+            <div className="swipe-card-gradient" />
             <div
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    background:
-                        "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 55%, rgba(0,0,0,0.0) 75%)",
-                }}
-            />
-
-            <div
-                style={{
-                    position: "absolute",
-                    top: 18,
-                    left: 18,
-                    padding: "8px 12px",
-                    borderRadius: 10,
-                    border: "2px solid rgba(255,255,255,0.9)",
-                    color: "RED",
-                    fontWeight: 800,
-                    letterSpacing: 1,
-                    opacity: nopeOpacity,
-                    transform: "rotate(-14deg)",
-                    background: "rgba(0,0,0,0.2)",
+                className="swipe-card-reject"
+                style={{ opacity: nopeOpacity }}
+                id={`swipe-dislike-${item.id}`}
+                onClick={() => {
+                    console.debug('[SwipeCard] Dislike button clicked:', item);
+                    animateOut(-800, 0, () => onSwipeLeft(item));
                 }}
             >
                 REJECT
             </div>
-
             <div
-                style={{
-                    position: "absolute",
-                    top: 18,
-                    right: 18,
-                    padding: "8px 12px",
-                    borderRadius: 10,
-                    border: "2px solid rgba(255,255,255,0.9)",
-                    color: "GREEN",
-                    fontWeight: 800,
-                    letterSpacing: 1,
-                    opacity: likeOpacity,
-                    transform: "rotate(14deg)",
-                    background: "rgba(0,0,0,0.2)",
+                className="swipe-card-match"
+                style={{ opacity: likeOpacity }}
+                id={`swipe-like-${item.id}`}
+                onClick={() => {
+                    console.debug('[SwipeCard] Like button (MATCH overlay) clicked:', item);
+                    animateOut(800, 0, () => onSwipeRight(item));
                 }}
             >
                 MATCH
             </div>
-
-            <div style={{ position: "absolute", left: 16, right: 16, bottom: 16 }}>
-                <div style={{ color: "white", fontSize: 22, fontWeight: 800 }}>
-                    {item.name}
-                </div>
-                <div style={{ color: "rgba(255,255,255,0.85)", marginTop: 4 }}>
+            <div className="swipe-card-info">
+                <div className="swipe-card-title">{item.name}</div>
+                <div className="swipe-card-details">
                     {item.city}, {item.country} • {item.tagline}
                 </div>
-                <div
-                    style={{
-                        color: "rgba(255,255,255,0.7)",
-                        marginTop: 10,
-                        fontSize: 13,
-                    }}
-                >
-                    Double-click (or Enter) for full profile
+                {/* SAT/ACT averages box */}
+                <div style={{
+                    margin: "10px 0 0 0",
+                    background: "#f3f3f3",
+                    color: "#222",
+                    borderRadius: 8,
+                    padding: "6px 10px",
+                    fontSize: "0.98em",
+                    textAlign: "center",
+                    border: "1px solid #ccc"
+                }}>
+                    {(item.sat_avg && item.sat_avg > 0) || (item.act_avg && item.act_avg > 0) ? (
+                        <span>
+                            <strong>University SAT/ACT Avg:</strong><br />
+                            SAT: {item.sat_avg ?? "-"} | ACT: {item.act_avg ?? "-"}
+                        </span>
+                    ) : (
+                        <span>Contact the university for more info</span>
+                    )}
                 </div>
+                {/* Render actions (like/dislike buttons) if provided, after info */}
+                {renderActions && renderActions(item)}
+                {/* Debug: log when renderActions is rendered */}
+                {console.debug('[SwipeCard] renderActions rendered for:', item) || null}
             </div>
         </div>
     );
-}
+});
 
-function clamp(v, a, b) {
-    return Math.max(a, Math.min(b, v));
+export default SwipeCard;
+
+function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
 }
