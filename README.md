@@ -1,56 +1,80 @@
-# My React App
+# UniSwipe App – User Manual / README
 
-Full-stack app with React frontend and Node/Express backend.
+## Purpose
+UniSwipe is a full-stack web application designed to help students explore and discover institutions and programs in USA, in an interactive and personalized way.  
+Its main goal is to simplify the decision-making process for high-school students choosing institution programs, but anyone interested in programs can benefit.  
+
+The app uses a **Tinder-style interface** for swiping through institutions according to user preferences. Users can indicate interest by liking intitutions, and the app dynamically displays programs based on the selected order of preference. This makes discovering institutions and programs easy, comfortable and fun.
+
+---
+
+## Key Features
+
+- **User Registration and Login**
+  - Register a new account with full name, email, and scores (SAT,ACT and GPA)
+  - Login with email and password
+- **Discover institutions**
+  - Swipe through institutions interactively
+  - Programs are displayed according to your selected preference order
+  - Shows institution info, programs, and key details
+- **My Likes / Favorites**
+  - Save institutions you are interested in
+  - View and manage all liked intitutions
+- **Preferences**
+  - Set preferred state, degree type, field/program and minimun ROI.
+  - Adjust recommendation order for institutions discovery
+- **Analytics**
+  - Overview of institutions and programs patterns
+  - Compare institutions and programs based on selected criteria (e.g., addmission rate, salary, ROI...)
+- **Navigation**
+  - Move between sections:
+    - Discover (swipe institutions)
+    - My Likes (favorites)
+    - Analytics (institutions insights)
+    - Preferences (set and adjust filters)
+
+---
 
 ## Setup
 
-You'll need Node.js and MySQL installed.
+You will need **Node.js** and **MySQL** installed locally.
 
-### Getting started
+## Getting Started
 
-**Client:**
-```bash
-npm install
-npm run dev
-```
+Open 2 terminals, one for frontend and the other for backend:
+
+### Frontend (Client)
+Run the following commands:
+
+    npm install
+    npm run dev
+
 Runs on http://localhost:5173
 
-**Server:**
-```bash
-cd server
-npm install
-```
+### Backend (Server)
+Run the following commands:
 
-Create a `.env` file in the server directory:
-```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=myreactapp
-```
+    cd server
+    npm install
 
-Then run:
-```bash
-npm run init-db  # first time only
-npm run dev
-```
+Create a .env file in the server directory:
 
-### Running everything
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=yourpassword
+    DB_NAME=myreactapp
 
-Just open two terminals and run `npm run dev` in each (remember to `cd server` for the backend).
+Then navigate to dataBase/scripts/ and run:
 
-## Commands
+    npm run init-db
+    npm run dev
 
-**Client:**
-- `npm run dev` - dev server
-- `npm run build` - production build
-- `npm run lint` - run linter
+## Running Everything
 
-**Server:**
-- `npm run dev` - dev mode with auto-restart
-- `npm start` - production
-- `npm run init-db` - set up database
+Just open two terminals and run npm run dev in each (remember to 'cd server' for the backend)
 
-## Stack
 
-React + Vite / Node + Express / MySQL
+
+
+
+
