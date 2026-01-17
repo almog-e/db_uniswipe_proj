@@ -1,10 +1,10 @@
-# UniSwipe App – User Manual / README
+# UniSwipe App: A Tinder-Inspired institutions Platform to find the best match
 
 ## Purpose
 UniSwipe is a full-stack web application designed to help students explore and discover institutions and programs in USA, in an interactive and personalized way.  
 Its main goal is to simplify the decision-making process for high-school students choosing institution programs, but anyone interested in programs can benefit.  
 
-The app uses a **Tinder-style interface** for swiping through institutions according to user preferences. Users can indicate interest by liking intitutions, and the app dynamically displays programs based on the selected order of preference. This makes discovering institutions and programs easy, comfortable and fun.
+The app uses a Tinder-style interface for swiping through institutions based on user preferences. Users can indicate interest by liking institutions, and the app dynamically displays programs according to the selected order of preference. When viewing an institution’s information, the programs it offers are displayed, with the most relevant programs shown at the top. This makes discovering institutions and programs easy, comfortable, and fun.
 
 ---
 
@@ -21,7 +21,7 @@ The app uses a **Tinder-style interface** for swiping through institutions accor
   - Save institutions you are interested in
   - View and manage all liked intitutions
 - **Preferences**
-  - Set preferred state, degree type, field/program and minimun ROI.
+  - Set preferred state, degree type, field/program and minimun ROI
   - Adjust recommendation order for institutions discovery
 - **Analytics**
   - Overview of institutions and programs patterns
@@ -39,7 +39,7 @@ The app uses a **Tinder-style interface** for swiping through institutions accor
 
 You will need **Node.js** and **MySQL** installed locally.
 
-## Getting Started
+### Getting Started
 
 Open 2 terminals, one for frontend and the other for backend:
 
@@ -69,9 +69,9 @@ Then navigate to dataBase/scripts/ and run:
     npm run init-db
     npm run dev
 
-## Running Everything
+### Running Everything
 
-Just open two terminals and run npm run dev in each (remember to 'cd server' for the backend)
+Just open two terminals and run *npm run dev* in each (remember to 'cd server' for the backend).
 
 
 
