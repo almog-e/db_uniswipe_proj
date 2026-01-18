@@ -76,25 +76,25 @@ UniSwipe follows an **MVC-style architecture**:
 
 ### Running Locally
 
-1. Backend (Server):  
+**1. Backend (Server):**
     - Create a .env file in the server directory with the database info
     - Navigate to server directory
     - Run the following commands in the terminal:
 
         npm install
        
-        npm run init-db  # first time only, in dataBase/scripts/ directory
+        npm run init-db          # first time only, in dataBase/scripts/ directory
        
         npm run dev
 
-3. Frontend (client folder):
+**2. Frontend (Client):**
     - Run the following commands in the terminal:
 
         npm install
-      
+        
         npm run dev
 
-3. App runs locally:
+**3. App runs locally:**
 
     Frontend: http://localhost:5173
 
