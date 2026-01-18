@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import "./AppNavbar.css";
+import logo from "../../../public/logo.png";
 
 export default function AppNavbar() {
     const { user, logout } = useAuth();
@@ -15,8 +16,12 @@ export default function AppNavbar() {
 
     return (
         <div className="app-navbar">
+            <div className="logo">
+                <img src={logo} alt="logo" style={{ width: "100px", height: "auto" }} />
+            </div>
+
             <div className="app-navbar-left">
-                <strong>UniMatch</strong>
+                {/* <strong>UniSwipe</strong> */}
                 <span className="app-navbar-email">
                     {user.email}
                 </span>
