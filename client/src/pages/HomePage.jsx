@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getUniversities } from "../services/universitiesService";
 import SwipeCard from "../components/SwipeCard";
 import { addMatch, getMatches } from "../services/matchesStorage";
+import { addLike } from "../services/likesStorage";
 import AppNavbar from "../components/AppNavbar";
 import { useAuth } from "../auth/AuthContext";
 import { fetchWikipediaLogo } from "../services/wikipediaLogo";
@@ -154,6 +155,7 @@ export default function HomePage() {
 
     // Unified swipe right/like logic
     const onSwipeRight = (uni) => {
+        addLike(uni); // Always add to likes
         const userSAT = user?.sat_score || 0;
         const userACT = user?.act_score || 0;
         const uniSAT = uni.sat_avg || 0;
@@ -193,10 +195,10 @@ export default function HomePage() {
                 </select>
                 <button
                     type="button"
-                    onClick={() => navigate("/likes")}
+                    onClick={() => navigate("/matches")}
                     className="homepage-likes-btn"
                 >
-                    My Likes
+                    My Matches
                 </button>
             </div>
             <div className="homepage-main">
