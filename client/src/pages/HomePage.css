@@ -33,7 +33,7 @@
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.2);
-  background: gray;
+  background: rgb(255, 255, 255);
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;

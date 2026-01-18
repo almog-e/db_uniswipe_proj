@@ -4,6 +4,7 @@
   padding: 24px;
   max-width: 800px;
   margin: 0 auto;
+  background: linear-gradient(135deg, #667eea 0%, #f7ac4a 100%);
 }
 
 .usersettings-title {
@@ -49,7 +50,7 @@
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.2);
   font-size: 14px;
-  background-color: gray;
+  background-color: rgb(226, 226, 226);
 }
 
 .usersettings-range-label {
@@ -82,7 +83,7 @@
   padding: 12px 24px;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.2);
-  background: gray;
+  background: rgb(255, 120, 120);
   cursor: pointer;
   font-weight: 600;
 }
@@ -91,7 +92,7 @@
   padding: 12px 24px;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.2);
-  background: black;
+  background: rgb(0, 0, 0);
   color: white;
   cursor: pointer;
   font-weight: 600;
