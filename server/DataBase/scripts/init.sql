@@ -1,7 +1,7 @@
 -- init.sql
 
--- IN CMD:
--- mysql --local-infile=1 -u root -p < init.sql
+-- Allow local infile for loading CSV files
+SET GLOBAL local_infile = 1;
 
 -- Drop and Create new DataBase if exists
 DROP DATABASE IF EXISTS uniswipe;
