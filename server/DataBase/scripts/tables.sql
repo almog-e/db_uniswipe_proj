@@ -25,8 +25,6 @@ CREATE TABLE user_preferences (
     -- max_years_of_study INT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
--- Create index
-CREATE INDEX idx_pref_user ON user_preferences(user_id);
 
 -- states ------------------------------------------------
 CREATE TABLE states (
@@ -98,11 +96,9 @@ CREATE TABLE institutions (
     public_private VARCHAR(50),
     admission_rate FLOAT,
     site_url VARCHAR(255),
-    logo_url VARCHAR(255),
+    logo_url VARCHAR(255), -- Where do we get that?
     FOREIGN KEY (state) REFERENCES states(state_code)
 );
--- Create index
-CREATE INDEX idx_inst_state ON institutions(state);
 
 -- programs ---------------------------------------------------------
 CREATE TABLE programs (
@@ -120,8 +116,6 @@ CREATE TABLE institutions_programs (
     FOREIGN KEY (cip_code) REFERENCES programs(cip_code),
     UNIQUE (uni_id, cip_code)
 );
--- Create index
-CREATE INDEX idx_ip_cip ON institutions_programs(cip_code);
     
 -- admissions ----------------------------------------------------------
 CREATE TABLE admissions (
@@ -131,8 +125,6 @@ CREATE TABLE admissions (
     act_avg INT,
     FOREIGN KEY (uni_id) REFERENCES institutions(uni_id)
 );
--- Create index
-CREATE INDEX idx_adm_uni ON admissions(uni_id);
 
 -- program_outcomes -------------------------------------------------
 CREATE TABLE program_outcomes (
@@ -143,7 +135,19 @@ CREATE TABLE program_outcomes (
     roi_score FLOAT,
     FOREIGN KEY (uni_prog_id) REFERENCES institutions_programs(uni_prog_id)
 );
--- Create index
-CREATE INDEX idx_po_uni_prog ON program_outcomes(uni_prog_id);
-CREATE INDEX idx_po_roi ON program_outcomes(roi_score);
 
+-- indexes ----------------------------------------------------------
+CREATE INDEX idx_pref_user ON user_preferences(user_id);
+
+CREATE INDEX idx_inst_state_admission ON institutions(state, admission_rate);
+CREATE INDEX idx_inst_admission ON institutions(admission_rate);
+
+CREATE INDEX idx_programs_name ON programs(name);
+
+CREATE INDEX idx_ip_cip ON institutions_programs(cip_code);
+CREATE INDEX idx_ip_degree_uni ON institutions_programs(degree_type, uni_id);
+
+CREATE INDEX idx_adm_uni ON admissions(uni_id);
+
+CREATE INDEX idx_po_uni_prog_roi ON program_outcomes(uni_prog_id, roi_score);
+CREATE INDEX idx_po_roi ON program_outcomes(roi_score);
