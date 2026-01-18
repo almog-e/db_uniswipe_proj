@@ -244,6 +244,61 @@
     font-size: 1.1rem;
 }
 
+.gpa-line {
+    padding: 2rem 0;
+    margin-top: 1rem;
+}
+
+.gpa-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.gpa-bar {
+    position: relative;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 5px;
+}
+
+.gpa-bar .point {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gpa-bar .point::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: currentColor;
+    margin-bottom: 6px;
+}
+
+.gpa-bar .point span {
+    position: static;
+    top: auto;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: currentColor;
+}
+
+.gpa-bar .point.avg {
+    color: #667eea;
+}
+
+.gpa-bar .point.me {
+    color: #ef4444;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .analytics-page {

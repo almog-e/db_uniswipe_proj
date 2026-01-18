@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAuth } from "../auth/AuthContext";
 import './AnalyticsPage.css';
 import AppNavbar from '../components/AppNavbar';
 import { getAnalyticsData } from '../services/analyticsService';
@@ -70,6 +71,13 @@ const QUERIES = [
         description: 'Most profitable university for each field of study',
         endpoint: '/programs/intitutions/highestRoi',
         icon: '🎓'
+    },
+    {
+        id: 'GPArankings',
+        title: 'GPA Rankings',
+        description: 'Rankings of users based on GPA',
+        endpoint: '/users/averageGpa/:userId',
+        icon: '📊'
     }
 ];
 
@@ -79,21 +87,18 @@ export default function AnalyticsPage() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [limit, setLimit] = useState(DEFAULT_RESULTS);
+    const { user } = useAuth();
 
     // Get the data from the server for the selected query
     const fetchQueryResults = async (query, queryLimit) => {
         setLoading(true);
         setError(null);
-        setSelectedQuery(query);
 
         try {
-            const data = await getAnalyticsData(query.endpoint, queryLimit);
+            const url = queryLimit !== undefined ? `${query.endpoint}/${queryLimit}` : query.endpoint;
+            const data = await getAnalyticsData(url);
 
-            if (!data || data.length === 0) {
-                setResults([]);
-            } else {
-                setResults(data);
-            }
+            setResults(data || []);
         } catch (err) {
             console.error('Analytics error:', err);
             setError(err.message || 'Failed to load analytics data');
@@ -104,9 +109,20 @@ export default function AnalyticsPage() {
     };
 
     const handleQueryClick = (query) => {
+        setSelectedQuery(query);
         setLimit(DEFAULT_RESULTS);
-        fetchQueryResults(query, DEFAULT_RESULTS);
+
+        // Handle special case for GPA rankings which needs user ID
+        if (query.id === 'GPArankings' && user) {
+            const endpoint = query.endpoint.replace(':userId', user.user_id);
+            fetchQueryResults({ ...query, endpoint }, undefined);
+        } else {
+            fetchQueryResults(query, DEFAULT_RESULTS);
+        }
+
     };
+
+
     // Limit the results between 1 and 1000
     const handleLimitChange = (e) => {
         const newLimit = parseInt(e.target.value);
@@ -122,7 +138,48 @@ export default function AnalyticsPage() {
     };
 
     const renderResults = () => {
-        if (!results || results.length === 0) {
+        if (!results) return <div className="no-results">No results found</div>;
+
+        // Special rendering for GPA rankings
+        if (selectedQuery.id === 'GPArankings') {
+            const data = results;
+
+            return (
+                <div className="results-container">
+                    <div className="results-header">
+                        <h3>{selectedQuery.title}</h3>
+                        <div className="results-controls">
+                            <button onClick={() => setSelectedQuery(null)} className="btn-close">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+
+                    <p>You are at the {data.percentile_rank}% percentile</p>
+
+                    <div className="gpa-line">
+                        <div className="gpa-scale">
+                            {[0, 1, 2, 3, 4].map((num) => (
+                                <span key={num}>{num}</span>
+                            ))}
+                        </div>
+
+                        <div className="gpa-bar">
+                            <div className="point avg" style={{ left: `${(data.avg_gpa / 4) * 100}%` }}>
+                                <span>Avg ({data.avg_gpa.toFixed(2)})</span>
+                            </div>
+
+                            <div className="point me" style={{ left: `${(data.user_gpa / 4) * 100}%` }}>
+                                <span>You ({data.user_gpa.toFixed(2)})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Generic table rendering for other queries
+        if (!Array.isArray(results) || results.length === 0) {
             return <div className="no-results">No results found</div>;
         }
 
@@ -177,6 +234,8 @@ export default function AnalyticsPage() {
             </div>
         );
     };
+
+
 
     const formatHeader = (header) => {
         return header
