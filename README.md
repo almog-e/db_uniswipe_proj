@@ -1,6 +1,6 @@
 # UniSwipe App: A Tinder-Inspired institutions Platform to find the best match
 
-<img width="1181" height="1181" alt="logo" src="https://github.com/user-attachments/assets/6153d1d8-b9d8-4d12-a5ff-359a14431d3c" />
+<img width="70" height="70" alt="logo" src="https://github.com/user-attachments/assets/6153d1d8-b9d8-4d12-a5ff-359a14431d3c" />
 
 
 ## Purpose
@@ -17,8 +17,8 @@ The app uses a Tinder-style interface for swiping through institutions based on 
   - Register a new account with full name, email, and scores (SAT,ACT and GPA)
   - Login with email and password
 
-<img width="727" height="482" alt="image" src="https://github.com/user-attachments/assets/c790820c-6e24-493b-a77f-a4307894a546" />
-<img width="630" height="506" alt="image" src="https://github.com/user-attachments/assets/057485b5-e55a-4a68-8e08-0d568ea21f7f" />
+<img width="363" height="241" alt="image" src="https://github.com/user-attachments/assets/c790820c-6e24-493b-a77f-a4307894a546" />
+<img width="315" height="258" alt="image" src="https://github.com/user-attachments/assets/057485b5-e55a-4a68-8e08-0d568ea21f7f" />
 
 
 - **Discover institutions**
