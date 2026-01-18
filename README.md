@@ -30,7 +30,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
   - Shows institution info, programs, and key details
 
 
-    <img width="2519" height="267" alt="image" src="https://github.com/user-attachments/assets/7240e2c9-bd63-434c-a26a-a8a72516e43e" />
+    <img width="179" height="232" alt="image" src="https://github.com/user-attachments/assets/8103ba41-3eb5-4fcd-9c00-c0ba25b92c75" />
     
     <img width="528" height="237" alt="image" src="https://github.com/user-attachments/assets/4dd52e59-5b27-47ba-94ab-a24841d11276" />
 
