@@ -14,7 +14,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
 
 ## Key Features
 
-- **User Registration and Login**
+- ### **User Registration and Login**
   - Register a new account with full name, email, and scores (SAT,ACT and GPA)
   - Login with email and password
 
@@ -24,20 +24,20 @@ The app uses a Tinder-style interface for swiping through institutions based on 
     <img width="315" height="258" alt="image" src="https://github.com/user-attachments/assets/057485b5-e55a-4a68-8e08-0d568ea21f7f" />
 
 
-- **Discover institutions**
+- ### **Discover institutions**
   - Swipe through institutions interactively
   - Programs are displayed according to your selected preference order
   - Shows institution info, programs, and key details
 
 
-    <img width="179" height="232" alt="image" src="https://github.com/user-attachments/assets/8103ba41-3eb5-4fcd-9c00-c0ba25b92c75" />
+    <img width="174" height="237" alt="image" src="https://github.com/user-attachments/assets/8103ba41-3eb5-4fcd-9c00-c0ba25b92c75" />
     
     <img width="528" height="237" alt="image" src="https://github.com/user-attachments/assets/4dd52e59-5b27-47ba-94ab-a24841d11276" />
 
     <img width="420" height="397" alt="image" src="https://github.com/user-attachments/assets/9c25e44b-b483-4d0a-956b-da088b8e908f" />
 
 
-- **My Likes / Favorites**
+- ### **My Likes / Favorites**
   - Save institutions you are interested in
   - View and manage all liked intitutions
 
@@ -45,7 +45,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
     <img width="443" height="272" alt="image" src="https://github.com/user-attachments/assets/38333c02-2db9-4a62-a311-49b9e881758a" />
 
 
-- **Preferences**
+- ### **Preferences**
   - Set preferred state, degree type, field/program and minimun ROI
   - Adjust recommendation order for institutions discovery
 
@@ -53,7 +53,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
     <img width="442" height="305" alt="image" src="https://github.com/user-attachments/assets/09436081-3483-4146-b368-44ab0184c7ba" />
 
 
-- **Analytics**
+- ### **Analytics**
   - Overview of institutions and programs patterns
   - Compare institutions and programs based on selected criteria (e.g., addmission rate, salary, ROI...)
 
@@ -61,7 +61,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
     <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d7c40959-7b11-460d-b62d-ecc46e783fe5" />
 
 
-- **Navigation**
+- ### **Navigation**
   - Move between sections:
     - Discover (swipe institutions)
     - My Likes (favorites)
@@ -78,7 +78,7 @@ The app uses a Tinder-style interface for swiping through institutions based on 
 
 You will need **Node.js** and **MySQL** installed locally.
 
-### Getting Started
+### Getting Started:
 
 Open 2 terminals, one for frontend and the other for backend:
 
@@ -110,7 +110,7 @@ Then navigate to dataBase/scripts/ and run:
     npm run init-db
     npm run dev
 
-### Running Everything
+### Running Everything:
 
 Just open two terminals and run **npm run dev** in each (remember to 'cd server' for the backend).
 
