@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getUniversity } from "../services/universitiesService";
-import { addMatch } from "../services/matchesStorage";
+import { addLike } from "../services/likesStorage";
 import AppNavbar from "../components/AppNavbar";
 import { useAuth } from "../auth/AuthContext";
 import { request } from "../services/api";
@@ -98,10 +98,10 @@ export default function UniversityProfile() {
                         </div>
                         <button
                             type="button"
-                            onClick={() => addMatch(uni)}
+                            onClick={() => addLike(uni)}
                             className="uni-profile-add-btn"
                         >
-                            Add to Matches
+                            Like
                         </button>
                     </div>
                     <div className="uni-profile-details">

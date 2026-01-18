@@ -47,12 +47,20 @@ export default function AppNavbar() {
                     Discover
                 </button>
 
+
                 <button
                     type="button"
                     onClick={() => navigate("/likes")}
                     className="app-navbar-btn"
                 >
                     My Likes
+                </button>
+                <button
+                    type="button"
+                    onClick={() => navigate("/matches")}
+                    className="app-navbar-btn"
+                >
+                    My Matches
                 </button>
 
                 <button

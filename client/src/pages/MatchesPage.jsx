@@ -1,11 +1,12 @@
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AppNavbar from "../components/AppNavbar";
-import { clearLikes, getLikes, removeLike } from "../services/likesStorage";
+import { getMatches, clearMatches } from "../services/matchesStorage";
 import { fetchWikipediaLogo, getLocalPlaceholder } from "../services/wikipediaLogo";
 
-export default function LikesPage() {
-    const [likes, setLikes] = useState(() => getLikes());
+export default function MatchesPage() {
+    const [matches, setMatches] = useState(() => getMatches());
     const [displayCount, setDisplayCount] = useState(20);
     const [logos, setLogos] = useState({});
 
@@ -13,7 +14,7 @@ export default function LikesPage() {
         let ignore = false;
         async function loadLogos() {
             const updates = {};
-            await Promise.all(likes.map(async (u) => {
+            await Promise.all(matches.map(async (u) => {
                 const url = await fetchWikipediaLogo(u.name);
                 if (url) updates[u.id] = url;
             }));
@@ -21,23 +22,15 @@ export default function LikesPage() {
         }
         loadLogos();
         return () => { ignore = true; };
-    }, [likes]);
-
-    const onRemove = (id) => {
-        setLikes(removeLike(id));
-    };
-
-    const onClear = () => {
-        clearLikes();
-        setLikes([]);
-    };
+    }, [matches]);
 
     const loadMore = () => {
         setDisplayCount(prev => prev + 20);
     };
 
-    const displayedLikes = likes.slice(0, displayCount);
-    const hasMore = displayCount < likes.length;
+    const displayedMatches = matches.slice(0, displayCount);
+    const hasMore = displayCount < matches.length;
+
 
     return (
         <div>
@@ -46,15 +39,14 @@ export default function LikesPage() {
             <div style={{ color: "white", padding: 18, maxWidth: 860, margin: "0 auto" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
                     <div>
-                        <h1 style={{ margin: 0 }}>My Likes</h1>
+                        <h1 style={{ margin: 0 }}>My Matches</h1>
                         <div style={{ opacity: 0.75, marginTop: 6 }}>
-                            {likes.length} liked universities
+                            {matches.length} matched universities
                         </div>
                     </div>
-
                     <button
                         type="button"
-                        onClick={onClear}
+                        onClick={() => { clearMatches(); setMatches([]); }}
                         style={{
                             height: 44,
                             color: "white",
@@ -66,7 +58,7 @@ export default function LikesPage() {
                             fontWeight: 800,
                         }}
                     >
-                        Clear
+                        Clear Matches
                     </button>
                 </div>
 
@@ -82,7 +74,7 @@ export default function LikesPage() {
                         gap: 14,
                     }}
                 >
-                    {displayedLikes.map((u) => (
+                    {displayedMatches.map((u) => (
                         <div
                             key={u.id}
                             style={{
@@ -102,24 +94,21 @@ export default function LikesPage() {
                             <div style={{ padding: 12 }}>
                                 <div style={{ fontWeight: 800 }}>{u.name}</div>
                                 <div style={{ opacity: 0.75, fontSize: 13, marginTop: 4 }}>
-                                    {u.city}, {u.country}
+                                    {u.city}, {u.country || u.state}
                                 </div>
 
                                 <div style={{ display: "flex", gap: 10, marginTop: 10 }}>
                                     <Link to={`/u/${u.id}`} style={linkBtn}>
                                         View
                                     </Link>
-                                    <button type="button" onClick={() => onRemove(u.id)} style={linkBtn}>
-                                        Remove
-                                    </button>
                                 </div>
                             </div>
                         </div>
                     ))}
 
-                    {likes.length === 0 && (
+                    {matches.length === 0 && (
                         <div style={{ opacity: 0.75 }}>
-                            No likes yet. Go swipe like a responsible adult.
+                            No matches yet. Go swipe like a responsible adult.
                         </div>
                     )}
                 </div>
@@ -138,7 +127,7 @@ export default function LikesPage() {
                                 fontWeight: 700,
                             }}
                         >
-                            Load More ({likes.length - displayCount} remaining)
+                            Load More ({matches.length - displayCount} remaining)
                         </button>
                     </div>
                 )}

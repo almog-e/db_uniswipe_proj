@@ -34,6 +34,8 @@
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.2);
   background: rgb(255, 255, 255);
+  color: black;  
+
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
