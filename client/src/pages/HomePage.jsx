@@ -193,7 +193,7 @@ export default function HomePage() {
                 </select>
                 <button
                     type="button"
-                    onClick={() => navigate("/matches")}
+                    onClick={() => navigate("/likes")}
                     className="homepage-likes-btn"
                 >
                     My Likes
