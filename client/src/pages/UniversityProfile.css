@@ -8,12 +8,14 @@
 
 .uni-profile-back {
   text-decoration: none;
+  color: orangered
 }
 
 .uni-profile-main {
   margin-top: 14px;
   display: grid;
   gap: 16px;
+  color: white;
 }
 
 .uni-profile-card {
@@ -47,6 +49,8 @@
 
 .uni-profile-title {
   margin: 0;
+  color: orangered;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .uni-profile-subtitle {
@@ -59,10 +63,10 @@
   padding: 0 14px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.2);
-  background: black;
+  background: rgb(0, 0, 0);
   color: white;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -78,19 +82,21 @@
   margin-top: 12px;
   display: grid;
   gap: 12px;
+  color: black;
 }
 
 .uni-profile-userprefs {
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 12px;
-  background-color: #29312aff;
+  background-color: rgb(231, 250, 233);
   border: 2px solid #4CAF50;
+  color: black;
 }
 
 .uni-profile-userprefs-title {
   margin: 0 0 12px 0;
-  color: #b9dabbff;
+  color: #4CAF50;
 }
 
 .uni-profile-userprefs-list {
@@ -103,15 +109,14 @@
   padding: 16px;
   border-radius: 12px;
   border: 1px solid rgba(0,0,0,0.1);
-  background-color: #706c6c;
+  background-color: #ffffff;
+  opacity: 0.9;
   position: relative;
   transition: all 0.2s ease;
 }
 .uni-profile-program-card.match {
   border: 3px solid #4CAF50;
-  background-color: #222222;
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-  transform: scale(1.02);
 }
 
 .uni-profile-program-badge {

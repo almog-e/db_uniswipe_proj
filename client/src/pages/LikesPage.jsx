@@ -43,7 +43,7 @@ export default function LikesPage() {
         <div>
             <AppNavbar />
 
-            <div style={{ padding: 18, maxWidth: 860, margin: "0 auto" }}>
+            <div style={{ color: "white", padding: 18, maxWidth: 860, margin: "0 auto" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
                     <div>
                         <h1 style={{ margin: 0 }}>My Likes</h1>
@@ -57,6 +57,7 @@ export default function LikesPage() {
                         onClick={onClear}
                         style={{
                             height: 44,
+                            color: "white",
                             padding: "0 14px",
                             borderRadius: 12,
                             border: "1px solid rgba(0,0,0,0.2)",
