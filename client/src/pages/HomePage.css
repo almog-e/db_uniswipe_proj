@@ -19,19 +19,21 @@
 .homepage-title {
   font-size: 18px;
   font-weight: 800;
+  color: white;
 }
 
 .homepage-subtitle {
   opacity: 0.75;
   margin-top: 4px;
   font-size: 13px;
+  color: white;  
 }
 
 .homepage-select {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.2);
-  background: gray;
+  background: rgb(255, 255, 255);
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
@@ -188,7 +190,7 @@
   justify-content: center;
 }
 .match-popup {
-  background: #444444ff;
+  background: rgb(192, 192, 192);
   border-radius: 16px;
   padding: 32px;
   min-width: 280px;

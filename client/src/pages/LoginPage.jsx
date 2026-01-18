@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import "./LoginPage.css";
+import logo from "../../../public/logo.png";
+
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -31,6 +33,11 @@ function LoginPage() {
   return (
     <div className="login-page">
       <div className="login-card">
+         <div className="logo">
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img src={logo} alt="logo" style={{ width: 100, height: "auto", marginBottom: 12 }} />
+            </div>
+          </div>
         <h1 className="login-title">Login</h1>
         <p className="login-subtitle">Welcome back! Please sign in.</p>
 
