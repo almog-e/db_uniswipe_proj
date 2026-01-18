@@ -233,4 +233,25 @@ router.get(
     })
 );
 
+// q10: This query retrieves the average GPA and the user GPA
+router.get(
+    '/users/averageGpa/:userId',
+    asyncWrap(async (req, res) => {
+        const { userId } = req.params;
+        const [rows] = await db.query(
+            `SELECT
+                u.user_id,
+                ROUND(u.gpa, 2) AS user_gpa,
+                ROUND((SELECT AVG(gpa) FROM users), 2) AS avg_gpa,
+                ROUND(u.gpa - (SELECT AVG(gpa) FROM users), 2) AS diff,
+                ROUND((SELECT COUNT(*) FROM users WHERE gpa < u.gpa) * 100.0 / (SELECT COUNT(*) FROM users), 2) AS percentile_rank
+            FROM users u
+            WHERE u.user_id = ?;`,
+            [userId]
+        );
+        res.json(rows[0]);
+    })
+);
+
+
 export default router;

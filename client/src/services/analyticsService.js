@@ -37,6 +37,10 @@ export async function getTopProgramInstitution(limit = 50) {
 }
 
 // Generic function to call any analytics endpoint
-export async function getAnalyticsData(endpoint, limit = 10) {
-    return request(`/api/analytics${endpoint}/${limit}`);
+export async function getAnalyticsData(endpoint, limit) {
+    if (limit !== undefined) {
+        return request(`/api/analytics${endpoint}/${limit}`);
+    } else {
+        return request(`/api/analytics${endpoint}`);
+    }
 }
