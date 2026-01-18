@@ -18,8 +18,10 @@ The app uses a Tinder-style interface for swiping through institutions based on 
   - Register a new account with full name, email, and scores (SAT,ACT and GPA)
   - Login with email and password
 
-<img width="373" height="258" alt="image" src="https://github.com/user-attachments/assets/c790820c-6e24-493b-a77f-a4307894a546" />
-<img width="315" height="258" alt="image" src="https://github.com/user-attachments/assets/057485b5-e55a-4a68-8e08-0d568ea21f7f" />
+
+    <img width="373" height="258" alt="image" src="https://github.com/user-attachments/assets/c790820c-6e24-493b-a77f-a4307894a546" />
+    
+    <img width="315" height="258" alt="image" src="https://github.com/user-attachments/assets/057485b5-e55a-4a68-8e08-0d568ea21f7f" />
 
 
 - **Discover institutions**
@@ -27,27 +29,37 @@ The app uses a Tinder-style interface for swiping through institutions based on 
   - Programs are displayed according to your selected preference order
   - Shows institution info, programs, and key details
 
-<img width="5019" height="267" alt="image" src="https://github.com/user-attachments/assets/7240e2c9-bd63-434c-a26a-a8a72516e43e" />
-<img width="528" height="237" alt="image" src="https://github.com/user-attachments/assets/4dd52e59-5b27-47ba-94ab-a24841d11276" />
-<img width="420" height="397" alt="image" src="https://github.com/user-attachments/assets/9c25e44b-b483-4d0a-956b-da088b8e908f" />
+
+    <img width="2519" height="267" alt="image" src="https://github.com/user-attachments/assets/7240e2c9-bd63-434c-a26a-a8a72516e43e" />
+    
+    <img width="528" height="237" alt="image" src="https://github.com/user-attachments/assets/4dd52e59-5b27-47ba-94ab-a24841d11276" />
+
+    <img width="420" height="397" alt="image" src="https://github.com/user-attachments/assets/9c25e44b-b483-4d0a-956b-da088b8e908f" />
+
 
 - **My Likes / Favorites**
   - Save institutions you are interested in
   - View and manage all liked intitutions
+
  
-<img width="443" height="272" alt="image" src="https://github.com/user-attachments/assets/38333c02-2db9-4a62-a311-49b9e881758a" />
+    <img width="443" height="272" alt="image" src="https://github.com/user-attachments/assets/38333c02-2db9-4a62-a311-49b9e881758a" />
+
 
 - **Preferences**
   - Set preferred state, degree type, field/program and minimun ROI
   - Adjust recommendation order for institutions discovery
 
-<img width="442" height="305" alt="image" src="https://github.com/user-attachments/assets/09436081-3483-4146-b368-44ab0184c7ba" />
+
+    <img width="442" height="305" alt="image" src="https://github.com/user-attachments/assets/09436081-3483-4146-b368-44ab0184c7ba" />
+
 
 - **Analytics**
   - Overview of institutions and programs patterns
   - Compare institutions and programs based on selected criteria (e.g., addmission rate, salary, ROI...)
 
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d7c40959-7b11-460d-b62d-ecc46e783fe5" />
+
+    <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d7c40959-7b11-460d-b62d-ecc46e783fe5" />
+
 
 - **Navigation**
   - Move between sections:
@@ -56,7 +68,9 @@ The app uses a Tinder-style interface for swiping through institutions based on 
     - Analytics (institutions insights)
     - Preferences (set and adjust filters)
 
-<img width="1024" height="114" alt="image" src="https://github.com/user-attachments/assets/651761d8-9d15-4fd0-b019-61847ee63b04" />
+
+      <img width="1024" height="114" alt="image" src="https://github.com/user-attachments/assets/651761d8-9d15-4fd0-b019-61847ee63b04" />
+
 
 ---
 
@@ -82,6 +96,8 @@ Run the following commands:
     cd server
     npm install
 
+Runs on http://localhost:3001
+
 Create a .env file in the server directory:
 
     DB_HOST=localhost
@@ -96,7 +112,7 @@ Then navigate to dataBase/scripts/ and run:
 
 ### Running Everything
 
-Just open two terminals and run *npm run dev* in each (remember to 'cd server' for the backend).
+Just open two terminals and run **npm run dev** in each (remember to 'cd server' for the backend).
 
 
 
