@@ -37,7 +37,7 @@ UniSwipe follows an **MVC-style architecture**:
 
 [React Frontend] <--fetch--> [Node.js API] <--SQL--> [MySQL Database]
 
-### High-Level Diagram
+<!-- ### High-Level Diagram -->
 
 <!-- project files struture? -->
 
@@ -77,19 +77,22 @@ UniSwipe follows an **MVC-style architecture**:
 ### Running Locally
 
 1. Backend (Server):  
-- Create a .env file in the server directory with the database info
-- Navigate to server directory
-- Run the following commands in the terminal:
+    - Create a .env file in the server directory with the database info
+    - Navigate to server directory
+    - Run the following commands in the terminal:
 
-    npm install
-    npm run init-db  # first time only, in dataBase/scripts/ directory
-    npm run dev
+        npm install
+       
+        npm run init-db  # first time only, in dataBase/scripts/ directory
+       
+        npm run dev
 
-2. Frontend (client folder):
-- Run the following commands in the terminal:
+3. Frontend (client folder):
+    - Run the following commands in the terminal:
 
-    npm install
-    npm run dev
+        npm install
+      
+        npm run dev
 
 3. App runs locally:
 
@@ -107,6 +110,7 @@ Using MySQL software
 
 **Tables and Relationships:**
 
+
 1. **users**
 - `user_id` (PK)  
 - `name`  
@@ -116,6 +120,7 @@ Using MySQL software
 - `sat_score`  
 - `act_score`
 
+
 2. **user_preferences**
 - `pref_id` (PK)  
 - `user_id` (FK -> users.user_id)  
@@ -124,9 +129,11 @@ Using MySQL software
 - `preferred_field_category`  
 - `min_roi`  
 
+
 3. **states**
 - `state_code` (PK)  
 - `state_name`  
+
 
 4. **institutions**
 - `uni_id` (PK)  
@@ -139,9 +146,11 @@ Using MySQL software
 - `site_url`  
 - `logo_url`  
 
+
 5. **programs**
 - `cip_code` (PK)  
 - `name`  
+
 
 6. **institutions_programs**
 - `uni_prog_id` (PK)  
@@ -150,11 +159,13 @@ Using MySQL software
 - `degree_type`  
 - UNIQUE constraint: `(uni_id, cip_code)`
 
+
 7. **admissions**
 - `admission_id` (PK)  
 - `uni_id` (FK -> institutions.uni_id)  
 - `sat_avg`  
 - `act_avg`  
+
 
 8. **program_outcomes**
 - `outcome_id` (PK)  
@@ -163,6 +174,8 @@ Using MySQL software
 - `earn_2years`  
 - `roi_score`
 
+
+
 **Relationships Overview:**
 - `institutions_programs` links `institutions` <--> `programs` (many-to-many)  
 - `institutions` <--> `states` (many-to-one)  
@@ -170,6 +183,11 @@ Using MySQL software
 - `program_outcomes` links `institutions_programs` <--> earnings and ROI  
 - `users` <--> `user_preferences` (one-to-one)  
 
-![alt text](ERD.png)
+
+
+### Schema ERD:
+
+<img width="7298" height="5554" alt="ERD" src="https://github.com/user-attachments/assets/fb71f251-7cb2-4d60-85bf-7a1935b1c509" />
+
 
 
