@@ -37,7 +37,7 @@ The app uses a swipe-style interface for swiping through institutions based on u
     <img width="420" height="397" alt="image" src="https://github.com/user-attachments/assets/9c25e44b-b483-4d0a-956b-da088b8e908f" />
 
 
-- ### **My Likes / Favorites**
+- ### **My Likes**
   - Save institutions you are interested in
   - View and manage all liked intitutions
 
@@ -45,12 +45,12 @@ The app uses a swipe-style interface for swiping through institutions based on u
     <img width="443" height="272" alt="image" src="https://github.com/user-attachments/assets/38333c02-2db9-4a62-a311-49b9e881758a" />
 
 
-- ### **Preferences**
-  - Set preferred state, degree type, field/program and minimun ROI
-  - Adjust recommendation order for institutions discovery
+- ### **My Matches**
+  - Save institutions you are interested in and have relevant programs based on your SAT/ACT scores
+  - View and manage all matched intitutions
 
-
-    <img width="442" height="305" alt="image" src="https://github.com/user-attachments/assets/09436081-3483-4146-b368-44ab0184c7ba" />
+ 
+    <img width="748" height="236" alt="image" src="https://github.com/user-attachments/assets/ad2817eb-40d1-41ba-9b4c-b3c2d439248e" />
 
 
 - ### **Analytics**
@@ -60,16 +60,40 @@ The app uses a swipe-style interface for swiping through institutions based on u
 
     <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d7c40959-7b11-460d-b62d-ecc46e783fe5" />
 
+ 
+- ### **Preferences**
+  - Set preferred state, degree type, field/program and minimun ROI
+  - Adjust recommendation order for institutions discovery
+
+
+    <img width="442" height="305" alt="image" src="https://github.com/user-attachments/assets/09436081-3483-4146-b368-44ab0184c7ba" />
+
+
+- ### **API/Docs**
+  - Documents all available API calls for the UniSwipe backend
+  - Focus on Home page and Analytics page
+  - Shows endpoints, queries and tests
+
+
+    <img width="752" height="216" alt="image" src="https://github.com/user-attachments/assets/6674f091-2574-4713-8260-f8b92202d8f2" />
+
+    <img width="736" height="168" alt="image" src="https://github.com/user-attachments/assets/55c77bba-0336-4f62-93c9-4e812316a941" />
+
+    <img width="609" height="132" alt="image" src="https://github.com/user-attachments/assets/d9b73b16-b088-4c28-a992-24542863574b" />
+
+
 
 - ### **Navigation**
   - Move between sections:
     - Discover (swipe institutions)
     - My Likes (favorites)
+    - My Matches (institutions with relevat programs)
     - Analytics (institutions insights)
     - Preferences (set and adjust filters)
+    - API/Docs (see endpoints and queries)
 
 
-      <img width="1024" height="114" alt="image" src="https://github.com/user-attachments/assets/651761d8-9d15-4fd0-b019-61847ee63b04" />
+      <img width="1284" height="105" alt="image" src="https://github.com/user-attachments/assets/ba646c8f-ad55-426b-9b9a-ea27fc7ce03f" />
 
 
 ---
