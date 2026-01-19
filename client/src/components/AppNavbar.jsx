@@ -81,6 +81,14 @@ export default function AppNavbar() {
 
                 <button
                     type="button"
+                    onClick={() => navigate("/api")}
+                    className="app-navbar-btn"
+                >
+                    API/Docs
+                </button>
+
+                <button
+                    type="button"
                     onClick={onLogout}
                     className="app-navbar-btn app-navbar-btn-black"
                 >

@@ -199,3 +199,4 @@ id,name,email,gender,address,state,latitude,longitude,GPA,SAT,ACT,min_ROI,high_s
 198,Eadie Ginsie,eginsie5h@google.cn,F,6 International Center,FL,25.9597,-80.1403,2.8,1220,25,17.18,Computer Science,Associate's Degree,psychology
 199,Chad Walthew,cwalthew5i@e-recht24.de,F,8687 Carey Avenue,VA,37.5593,-77.4471,2.17,535,6,6.53,Computer Science,First Professional Degree,management
 200,Cosme Patrick,cpatrick5j@quantcast.com,M,1448 Eliot Place,IA,41.613,-90.6063,0.87,1380,35,65.49,Sciences,Doctoral Degree,communication
+201,test tester,test@test.com,m,5048 Old Shore Court,CA,37.7509,-122.4153,3.79,1200,35,58.08,Sciences,Bachelor's Degree,Computer Science.

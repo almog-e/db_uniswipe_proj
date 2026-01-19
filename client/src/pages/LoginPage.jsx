@@ -83,7 +83,7 @@ function LoginPage() {
         </p>
 
         <div className="login-credentials">
-          <div>Fake User: user@test.com / 123456</div>
+          <div>Fake User: test@test.com / 123456</div>
         </div>
       </div>
     </div>
