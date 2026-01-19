@@ -35,7 +35,7 @@ UniSwipe follows an **MVC-style architecture**:
 - **View:** React components (UI, pages, and navigation)  
 - **Controller:** Node/Express routes (API endpoints handling requests and interacting with the database)
 
-[React Frontend] <--fetch--> [Node.js API] <--SQL--> [MySQL Database]
+[React Frontend] **<--fetch-->** [Node.js API] **<--SQL-->** [MySQL Database]
 
 ---
 
@@ -73,8 +73,11 @@ UniSwipe follows an **MVC-style architecture**:
 ### Running Locally
 
 **1. Backend (Server):**
+
     - Create a .env file in the server directory with the database info
+    
     - Navigate to server directory
+    
     - Run the following commands in the terminal:
 
         npm install
@@ -84,6 +87,7 @@ UniSwipe follows an **MVC-style architecture**:
         npm start
 
 **2. Frontend (Client):**
+
     - Run the following commands in the terminal:
 
         npm install
