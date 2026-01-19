@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import { API_BASE } from "../services/api";
 import "./ApiPage.css";
 
 const apiEndpoints = [
@@ -15,8 +16,6 @@ const apiEndpoints = [
   { method: "PUT", path: "/api/user_pref/201", desc: "Update user preferences (example userId=201, body: { preferred_region: 'CA', preferred_degree_type: 'Bachelor's Degree', preferred_field_category: 'psychology', min_roi: 58.08 })" },
   { method: "POST", path: "/api/account_check/login", desc: "User login" },
 ];
-
-const API_BASE = "http://localhost:3001";
 
 export default function ApiPage() {
   const navigate = useNavigate();
@@ -105,33 +104,33 @@ export default function ApiPage() {
         <h3>HomePage Queries</h3>
         <ul>
           <li>
-            <b>All Universities (filterMode=1):</b><br />
-            <span className="api-doc-query-example">GET /api/universities?filterMode=1&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
+            <b>All Universities (mode=1):</b><br />
+            <span className="api-doc-query-example">GET /api/institutions?mode=1&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
             Shows all universities in the database, paginated. Excludes universities the user has already matched with. (Dropdown: "All Universities")
           </li>
           <li>
-            <b>In Your Region (filterMode=2):</b><br />
-            <span className="api-doc-query-example">GET /api/universities?filterMode=2&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
+            <b>In Your Region (mode=2):</b><br />
+            <span className="api-doc-query-example">GET /api/institutions?mode=2&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
             Shows only universities in the user's region, based on their profile or preferences. Excludes already matched universities. (Dropdown: "In Your region")
           </li>
           <li>
-            <b>By Degree Field (filterMode=3):</b><br />
-            <span className="api-doc-query-example">GET /api/universities?filterMode=3&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
+            <b>By Degree Field (mode=3):</b><br />
+            <span className="api-doc-query-example">GET /api/institutions?mode=3&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
             Shows universities that offer the user's selected degree field. Excludes already matched universities. (Dropdown: "By Degree field")
           </li>
           <li>
-            <b>By Preference Algorithm (filterMode=4):</b><br />
-            <span className="api-doc-query-example">GET /api/universities?filterMode=4&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
+            <b>By Preference Algorithm (mode=4):</b><br />
+            <span className="api-doc-query-example">GET /api/institutions?mode=4&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
             Shows universities ranked by a custom algorithm using all of the user's saved preferences (region, degree, field, etc.). Excludes already matched universities. (Dropdown: "By Preference Algorithm")
           </li>
           <li>
-            <b>High Admission Rate (&gt;50%) (filterMode=5):</b><br />
-            <span className="api-doc-query-example">GET /api/universities?filterMode=5&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
+            <b>High Admission Rate (&gt;50%) (mode=5):</b><br />
+            <span className="api-doc-query-example">GET /api/institutions?mode=5&amp;userId=USER_ID&amp;offset=OFFSET&amp;limit=10</span><br />
             Shows only universities with an admission rate above 50%. Excludes already matched universities. (Dropdown: "High Admission Rate (&gt;50%)")
           </li>
         </ul>
         <div className="api-doc-query-note">
-          <b>Filter Modes (HomePage select dropdown):</b>
+          <b>Mode Values (HomePage select dropdown):</b>
           <ul>
             <li><b>1 - All Universities:</b> All universities in the database.</li>
             <li><b>2 - In Your region:</b> Universities in the user's region.</li>
@@ -140,7 +139,7 @@ export default function ApiPage() {
             <li><b>5 - High Admission Rate (&gt;50%):</b> Universities with admission rate above 50%.</li>
           </ul>
           <b>Note:</b> All queries exclude universities the user has already matched with (client-side filtering), are paginated (<b>offset</b> increases by 10, <b>limit</b> is always 10), and require <b>userId</b> for filtering and matching logic.
-          <br /><b>Returned Data:</b> Each query returns an array of university objects with fields such as <code>id</code>, <code>name</code>, <code>region</code>, <code>degree_fields</code>, <code>sat_avg</code>, <code>act_avg</code>, <code>admission_rate</code>, etc.
+          <br /><b>Returned Data:</b> Each query returns an array of university objects with fields such as <code>id</code>, <code>name</code>, <code>state</code>, <code>city</code>, <code>public_private</code>, <code>sat_avg</code>, <code>act_avg</code>, <code>admission_rate</code>, <code>site_url</code>, etc.
         </div>
         <h3>AnalyticsPage Queries</h3>
         <ul>

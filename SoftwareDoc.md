@@ -10,7 +10,7 @@
 UniSwipe is a full-stack web application designed to help students explore and discover university programs and institutions.  
 It uses a **React + Vite frontend**, a **Node + Express backend**, and **MySQL** as the database.  
 
-The app provides a **Tinder-style interface** for browsing institutions and programs, dynamically prioritizing results based on user preferences.  
+The app provides a **swipe-style interface** for browsing institutions and programs, dynamically prioritizing results based on user preferences.  
 Authentication is implemented using **JWT tokens**, and the frontend communicates with the backend via REST API calls using the Fetch API.
 
 ---
@@ -57,7 +57,7 @@ UniSwipe follows an **MVC-style architecture**:
 - React components handle pages and user interaction  
 - Pages: Register, Login, Home, UniversityProfile, Analytics, Likes, UserPreferences, UserSettings
 - Fetch API 
-- Tinder-style swiping displays institutions according to user selection 
+- Swipe-style browsing displays institutions according to user selection 
 - Most relevant programs are shown at the top in each institution view  
 
 ---
@@ -172,7 +172,20 @@ Using MySQL software
 - `uni_prog_id` (FK -> institutions_programs.uni_prog_id)  
 - `earn_1year`  
 - `earn_2years`  
-- `roi_score`
+- `roi_score`  
+
+
+### Indexes
+
+- `idx_pref_user` on `user_preferences(user_id)`
+- `idx_inst_state_admission` on `institutions(state, admission_rate)`
+- `idx_inst_admission` on `institutions(admission_rate)`
+- `idx_programs_name` on `programs(name)`
+- `idx_ip_cip` on `institutions_programs(cip_code)`
+- `idx_ip_degree_uni` on `institutions_programs(degree_type, uni_id)`
+- `idx_adm_uni` on `admissions(uni_id)`
+- `idx_po_uni_prog_roi` on `program_outcomes(uni_prog_id, roi_score)`
+- `idx_po_roi` on `program_outcomes(roi_score)`
 
 
 
