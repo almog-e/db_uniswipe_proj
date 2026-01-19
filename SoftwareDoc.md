@@ -74,11 +74,11 @@ UniSwipe follows an **MVC-style architecture**:
 
 **1. Backend (Server):**
 
-    - Create a .env file in the server directory with the database info
-    
-    - Navigate to server directory
-    
-    - Run the following commands in the terminal:
+- Create a .env file in the server directory with the database info
+
+- Navigate to server directory
+
+- Run the following commands in the terminal:
 
         npm install
        
@@ -88,7 +88,7 @@ UniSwipe follows an **MVC-style architecture**:
 
 **2. Frontend (Client):**
 
-    - Run the following commands in the terminal:
+- Run the following commands in the terminal:
 
         npm install
         
