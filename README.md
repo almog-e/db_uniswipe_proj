@@ -50,7 +50,7 @@ The app uses a swipe-style interface for swiping through institutions based on u
   - View and manage all matched intitutions
 
  
-    <img width="748" height="236" alt="image" src="https://github.com/user-attachments/assets/ad2817eb-40d1-41ba-9b4c-b3c2d439248e" />
+    <img width="428" height="236" alt="image" src="https://github.com/user-attachments/assets/ad2817eb-40d1-41ba-9b4c-b3c2d439248e" />
 
 
 - ### **Analytics**
@@ -75,7 +75,7 @@ The app uses a swipe-style interface for swiping through institutions based on u
   - Shows endpoints, queries and tests
 
 
-    <img width="752" height="216" alt="image" src="https://github.com/user-attachments/assets/6674f091-2574-4713-8260-f8b92202d8f2" />
+    <img width="500" height="142" alt="image" src="https://github.com/user-attachments/assets/6674f091-2574-4713-8260-f8b92202d8f2" />
 
     <img width="736" height="168" alt="image" src="https://github.com/user-attachments/assets/55c77bba-0336-4f62-93c9-4e812316a941" />
 
