@@ -1,4 +1,4 @@
-# UniSwipe App: A Tinder-Inspired institutions Platform to find the best match
+# UniSwipe App: A swipe-style institutions Platform to find the best match
 
 <p align="center">
 <img width="400" height="400" alt="logo" src="https://github.com/user-attachments/assets/6153d1d8-b9d8-4d12-a5ff-359a14431d3c" />
@@ -8,7 +8,7 @@
 UniSwipe is a full-stack web application designed to help students explore and discover institutions and programs in USA, in an interactive and personalized way.  
 Its main goal is to simplify the decision-making process for high-school students choosing institution programs, but anyone interested in programs can benefit.  
 
-The app uses a Tinder-style interface for swiping through institutions based on user preferences. Users can indicate interest by liking institutions, and the app dynamically displays programs according to the selected order of preference. When viewing an institution’s information, the programs it offers are displayed, with the most relevant programs shown at the top. This makes discovering institutions and programs easy, comfortable, and fun.
+The app uses a swipe-style interface for swiping through institutions based on user preferences. Users can indicate interest by liking institutions, and the app dynamically displays programs according to the selected order of preference. When viewing an institution’s information, the programs it offers are displayed, with the most relevant programs shown at the top. This makes discovering institutions and programs easy, comfortable, and fun.
 
 ---
 

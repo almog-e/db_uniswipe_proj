@@ -10,7 +10,7 @@
 UniSwipe is a full-stack web application designed to help students explore and discover university programs and institutions.  
 It uses a **React + Vite frontend**, a **Node + Express backend**, and **MySQL** as the database.  
 
-The app provides a **Tinder-style interface** for browsing institutions and programs, dynamically prioritizing results based on user preferences.  
+The app provides a **swipe-style interface** for browsing institutions and programs, and can prioritizing results based on user preferences.  
 Authentication is implemented using **JWT tokens**, and the frontend communicates with the backend via REST API calls using the Fetch API.
 
 ---
@@ -54,11 +54,9 @@ UniSwipe follows an **MVC-style architecture**:
 
 ### Frontend Implementation
 
-- React components handle pages and user interaction  
-- Pages: Register, Login, Home, UniversityProfile, Analytics, Likes, UserPreferences, UserSettings
-- Fetch API 
-- Tinder-style swiping displays institutions according to user selection 
-- Most relevant programs are shown at the top in each institution view  
+ Fetch API 
+ Swipe-style swiping displays institutions according to user selection 
+ Most relevant programs are shown at the top in each institution view  
 
 ---
 
