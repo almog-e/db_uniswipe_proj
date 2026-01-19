@@ -9,6 +9,7 @@ import LikesPage from "../pages/LikesPage";
 import UserSettings from "../pages/UserSettings";
 import AnalyticsPage from "../pages/AnalyticsPage";
 import MatchesPage from "../pages/MatchesPage";
+import ApiPage from "../pages/ApiPage";
 
 import ProtectedRoute from "../auth/ProtectedRoute";
 import { AuthProvider } from "../auth/AuthContext";
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/matches" element={<MatchesPage />} />
             <Route path="/settings" element={<UserSettings />} />
             <Route path="/analytics" element={<AnalyticsPage />} />
+            <Route path="/api" element={<ApiPage />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/login" replace />} />
