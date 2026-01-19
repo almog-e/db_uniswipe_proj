@@ -110,7 +110,7 @@ Open 2 terminals, one for frontend and the other for backend:
 Run the following commands:
 
     npm install
-    npm run dev
+    npm start
 
 Runs on http://localhost:5173
 
@@ -132,11 +132,11 @@ Create a .env file in the server directory:
 Then navigate to dataBase/scripts/ and run:
 
     npm run init-db
-    npm run dev
+    npm start
 
 ### Running Everything:
 
-Just open two terminals and run **npm run dev** in each (remember to 'cd server' for the backend).
+Just open two terminals and run **npm start** in each (remember to 'cd server' for the backend).
 
 
 

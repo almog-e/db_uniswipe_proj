@@ -98,5 +98,5 @@ INSERT INTO user_preferences (
     preferred_field_category,
     min_roi
 )
-SELECT id, state, preferred_degree_type, preferred_field_category, min_ROI
+SELECT id, state, preferred_degree_type, 'Computer Science.', min_ROI
 FROM users_main;

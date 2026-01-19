@@ -37,10 +37,6 @@ UniSwipe follows an **MVC-style architecture**:
 
 [React Frontend] <--fetch--> [Node.js API] <--SQL--> [MySQL Database]
 
-<!-- ### High-Level Diagram -->
-
-<!-- project files struture? -->
-
 ---
 
 ### Authentication Flow
@@ -85,14 +81,14 @@ UniSwipe follows an **MVC-style architecture**:
        
         npm run init-db          # first time only, in dataBase/scripts/ directory
        
-        npm run dev
+        npm start
 
 **2. Frontend (Client):**
     - Run the following commands in the terminal:
 
         npm install
         
-        npm run dev
+        npm start
 
 **3. App runs locally:**
 
@@ -199,6 +195,7 @@ Using MySQL software
 
 
 ### Schema ERD:
+
 
 <img width="7298" height="5554" alt="ERD" src="https://github.com/user-attachments/assets/fb71f251-7cb2-4d60-85bf-7a1935b1c509" />
 
