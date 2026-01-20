@@ -129,6 +129,8 @@ Create a .env file in the server directory:
     DB_PASSWORD=yourpassword
     DB_NAME=myreactapp
 
+Also, remember to update the databse name in the sctipts
+
 Then navigate to dataBase/scripts/ and run:
 
     npm run init-db
