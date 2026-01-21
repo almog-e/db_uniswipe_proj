@@ -72,6 +72,8 @@ UniSwipe follows an **MVC-style architecture**:
 
 ### Running Locally
 
+**If any command doesn't work - try open terminals in CMD as administrator**
+
 **1. Backend (Server):**
 
 - Create a .env file in the server directory with the database info
