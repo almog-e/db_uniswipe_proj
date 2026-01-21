@@ -102,11 +102,11 @@ The app uses a swipe-style interface for swiping through institutions based on u
 
 You will need **Node.js** and **MySQL** installed locally.
 
-**If any command doesn't work - try open terminals in CMD as administrator**
+**If any command doesn't work - try open terminals in CMD as administrator.**
 
 ### Getting Started:
 
-**Only the first time, no need to do it if the app run before on the computer**
+**Only required the first time — no need if the app has run before on this computer.**
 
 Open 2 terminals, one for frontend and the other for backend:
 
@@ -126,18 +126,18 @@ Run the following commands:
 
 Runs on http://localhost:3001
 
-Create a .env file in the server directory:
+Create a .env file in the server directory and fill the following lines with your data info:
 
     DB_HOST=localhost
     DB_USER=root
     DB_PASSWORD=yourpassword
     DB_NAME=myreactapp
 
-Also, remember to update the databse name in the sctipts
+Also, remember to update the databse name in the sctipts (where there's USE database_name;)
 
 Then navigate to dataBase/scripts/ and run:
 
-    npm run init-db
+    npm run init-db          # only if the database does not already exist
     npm start
 
 ### Running Everything:
