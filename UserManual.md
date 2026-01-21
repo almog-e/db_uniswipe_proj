@@ -102,7 +102,11 @@ The app uses a swipe-style interface for swiping through institutions based on u
 
 You will need **Node.js** and **MySQL** installed locally.
 
+**If any command doesn't work - try open terminals in CMD as administrator**
+
 ### Getting Started:
+
+**Only the first time, no need to do it if the app run before on the computer**
 
 Open 2 terminals, one for frontend and the other for backend:
 
@@ -138,7 +142,7 @@ Then navigate to dataBase/scripts/ and run:
 
 ### Running Everything:
 
-Just open two terminals and run **npm start** in each (remember to 'cd server' for the backend).
+Just open two terminals (CMD as administrator) and run **npm start** in each (remember to 'cd server' for the backend).
 
 
 
