@@ -133,7 +133,7 @@ Create a .env file in the server directory and fill the following lines with you
     DB_PASSWORD=yourpassword
     DB_NAME=myreactapp
 
-Also, remember to update the databse name in the sctipts (where there's USE database_name;)
+Also, remember to update the databse name in the file: init.sql in scripts directory.
 
 Then navigate to dataBase/scripts/ and run:
 

@@ -1,8 +1,6 @@
 -- tables.sql ------------------------------------
 -- Create empty tables
 
-USE uniswipe;
-
 -- users -----------------------------------------------
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,

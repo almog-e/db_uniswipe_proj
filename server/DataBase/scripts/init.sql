@@ -1,12 +1,12 @@
 -- init.sql
 
 -- Allow local infile for loading CSV files
-SET GLOBAL local_infile = 1;
+-- SET GLOBAL local_infile = 1;
 
 -- Drop and Create new DataBase if exists
-DROP DATABASE IF EXISTS uniswipe;
-CREATE DATABASE IF NOT EXISTS uniswipe;
-USE uniswipe;
+DROP DATABASE IF EXISTS db03;
+CREATE DATABASE IF NOT EXISTS db03;
+USE db03;
 
 -- Create tables and load data
 schema.sql;

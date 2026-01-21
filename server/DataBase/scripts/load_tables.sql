@@ -1,7 +1,5 @@
 -- load_tables.sql ------------------------------------
 
-USE uniswipe;
-
 -- institutions ---------------------------------------
 INSERT INTO institutions (
     uni_id,

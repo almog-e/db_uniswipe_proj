@@ -1,7 +1,5 @@
 -- load_schema.sql ------------------------
 
-USE uniswipe;
-
 LOAD DATA LOCAL INFILE '../csv_files/Institutions.csv'
 INTO TABLE institutions_main
 FIELDS TERMINATED BY ','

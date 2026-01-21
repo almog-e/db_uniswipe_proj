@@ -76,7 +76,7 @@ UniSwipe follows an **MVC-style architecture**:
 
 **1. Backend (Server):**
 
-- Create a .env file in the server directory with the database info
+- Create a .env file in the server directory with the database info (also change database name in init.sql file)
 
 - Navigate to server directory
 
@@ -84,7 +84,7 @@ UniSwipe follows an **MVC-style architecture**:
 
         npm install
        
-        npm run init-db          # first time only, in dataBase/scripts/ directory
+        npm run init-db          # first time only, if the database does not already exist, in dataBase/scripts/ directory
        
         npm start
 
